@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Ken Wakita">
+  <meta name="dcterms.date" content="2019-12-04">
+  <title>LX2: Data abstraction</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/y19-vis/lib/reveal.js/css/print/pdf.css' : '/y19-vis/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/y19-vis/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">LX2: Data abstraction</h1>
+  <p class="author">Ken Wakita</p>
+  <p class="date">2019-12-04</p>
+</section>
+
+<section><section id="big-picture" class="title-slide slide level1"><h1>Big Picture</h1><p><a href="lx02/big_picture.png"><img src="lx02/big_picture.png"></img></a></p></section><section id="important-concepts" class="slide level2">
+<h2>Important Concepts</h2>
+<dl>
+<dt>Four basic dataset types</dt>
+<dd><p><strong>Tables</strong> / <strong>Networks</strong> / <strong>Fields</strong> / <strong>Geometry</strong> +<br/> and three more: Clusters / Sets / Lists</p>
+</dd>
+<dt>Five data types</dt>
+<dd><p><strong>Items</strong> / <strong>Attributes</strong> / <strong>Links</strong> / <strong>Positions</strong> / <strong>Grids</strong></p>
+</dd>
+<dt>Where from</dt>
+<dd><p>Static file / Stream</p>
+</dd>
+<dt>Attribute types</dt>
+<dd><p><strong>Categorical</strong> / <strong>Ordered</strong> (<strong>Ordinal</strong> / <strong>Quantitative</strong>)</p>
+<p>Ordering Direction: Sequantial / Diverging / Cyclic</p>
+</dd>
+</dl>
+</section></section>
+<section><section id="data-semantics-vs-data-types" class="title-slide slide level1"><h1>Data Semantics vs Data Types</h1></section><section id="example-data-sematics-12" class="slide level2">
+<h2>Example: <strong>Data Sematics</strong> (1/2)</h2>
+<p>これは何？</p>
+<div "text-align: center;"><code>14, 2.6, 30, 30, 15, 100001</code></div>
+</section><section id="example-data-semantics-22" class="slide level2">
+<h2>Example: <strong>Data Semantics</strong> (2/2)</h2>
+<p>では、こちらは？</p>
+<div "text-align: center;"><code>Basil, 7, S, Pear</code></div>
+<div>
+<ul>
+<li class="fragment"><p>今月7日にバジルと桃の積荷が届いた (shipping)</p></li>
+<li class="fragment"><p>近隣のBasil Point 区に7インチの積雪があったので、Pear Creek有限会社に除雪してもらった</p></li>
+<li class="fragment"><p>Basilという名前の実験用ネズミが迷路の南側に桃を置いた設定で7回脱出に成功した</p></li>
+</ul>
+</div>
+</section><section id="semantics-and-types" class="slide level2">
+<h2><strong>Semantics</strong> and <strong>Types</strong></h2>
+<dl>
+<dt>Semantics</dt>
+<dd><p>Real world meaning</p>
+</dd>
+<dt>Types</dt>
+<dd><p>Structural and mathematical interpretation</p>
+</dd>
+</dl>
+</section><section id="does-3-5-makes-sense" class="slide level2">
+<h2>Does “3 + 5” makes sense?</h2>
+<div>
+<ul>
+<li class="fragment"><p>家に3個のインスタントラーメンがありました。<br/> 母がスーパーでさらに5個買い足しました。<br/> 家には3 + 5 = 8個のインスタントラーメンがあります。</p></li>
+<li class="fragment"><p>私と友人のスーパージャンボ宝くじの番号はそれぞれ215番と562番でした。<br/> 宝くじの当選番号は777番です。<br/> 215+562=777に気づいたぼくらは狂喜乱舞しました。ぼくらは大金持ちです。</p></li>
+</ul>
+</div>
+</section></section>
+<section><section id="data-types" class="title-slide slide level1"><h1>Data Types</h1><ul>
+<li>Items</li>
+<li>Attributes</li>
+<li>Links</li>
+<li>Positions</li>
+<li>Grids</li>
+</ul></section><section id="items" class="slide level2">
+<h2>Items</h2>
+<dl>
+<dt>Items</dt>
+<dd><p>個々の存在: 表のデータ項目、ネットワーク構造の頂点</p>
+</dd>
+<dt>Attributes</dt>
+<dd><p>測定、観測、記録可能な性質</p>
+</dd>
+<dt>Links</dt>
+<dd><p>Item – Item 間の関係（集合論的関係: <span class="math inline">\(a \,R\, b\)</span>）</p>
+</dd>
+<dt>Positions</dt>
+<dd><p>2D/3D空間において場所を与える空間的データ</p>
+</dd>
+<dt>Grids</dt>
+<dd><p>連続的データ分布からのサンプリング戦略</p>
+</dd>
+</dl>
+</section></section>
+<section><section id="dataset-types" class="title-slide slide level1"><h1>Dataset Types</h1><ul>
+<li>Tables</li>
+<li>Networks &amp; Trees</li>
+<li>Fields</li>
+<li>Geometry</li>
+<li>Others: { Clusters, Sets, Lists }</li>
+</ul></section><section id="figure-2.3-data-and-dataset-types" class="slide level2">
+<h2>Figure 2.3: Data and Dataset Types</h2>
+<p><img src="lx02/fig3-data_and_dataset_types.png"></img></p>
+</section><section id="figure-2.3-data-and-dataset-types-1" class="slide level2">
+<h2>Figure 2.3: Data and Dataset Types</h2>
+<dl>
+<dt>Tables</dt>
+<dd><p><span class="math inline">\(\text {Items} \times \text {Attributes} \rightarrow \text {Value}\)</span></p>
+</dd>
+<dt>Networks <span class="math inline">\((V, E)\)</span></dt>
+<dd><ul>
+<li><p><span class="math inline">\((\text {Items}, \text {Items} \times \text {Items})\)</span></p></li>
+<li><p>Node attributes: <span class="math inline">\(\text {Items} \rightarrow \text {Value(s)}\)</span></p></li>
+<li><p>Link attributes: <span class="math inline">\(\text {Items} \times \text {Items} \rightarrow \text {Value(s)}\)</span></p></li>
+</ul>
+</dd>
+</dl>
+</section><section id="figure-2.3-data-and-dataset-types-2" class="slide level2">
+<h2>Figure 2.3: Data and Dataset Types</h2>
+<dl>
+<dt>Fields</dt>
+<dd><p>連続場から（有限のデータで表現するために）サンプリングしたもの</p>
+<p>Scalar fields (X線画像: 2D、fMRI: 3D), Vector fields (風向+風力), Tensor-fields (地殻のひずみ)</p>
+<p><span class="math inline">\(\text {sampling} \longleftrightarrow \text {interpolation}\)</span></p>
+<p><em>Spatial Fields</em>: 空間的位置についてサンプリングしたもの</p>
+<p><em>Grid types</em> サンプリングの種別:</p>
+<p>Uniform Grid (正方格子) / Rectilinear Grid (直方格子) / Structured Grid (曲線的な形状、例：極座標系における扇形状のサンプリング） / Unstructured Grid: Voronoi分割、行政区画に基づくサンプリング</p>
+</dd>
+</dl>
+</section></section>
+<section><section id="attribute-types" class="title-slide slide level1"><h1>Attribute Types</h1><p><img src="lx02/fig7-attribute_types.png"></img></p></section><section id="attribute-types-と演算" class="slide level2">
+<h2>Attribute Types と演算</h2>
+<ul>
+<li><p>Categorical: <span class="math inline">\(\equiv\)</span>, <span class="math inline">\(\not\equiv\)</span></p>
+<ul>
+<li>リンゴとミカンと柿、<span class="math inline">\(\left\{\text {学生}_k\right\}_k\)</span></li>
+</ul></li>
+<li><p>Ordered (<span class="math inline">\(\prec\)</span>): <span class="math inline">\(\subset, \sqsubset\)</span></p>
+<ul>
+<li><p>Ordinal: 例：シャツのサイズ (S / M / L / XL)、順位</p></li>
+<li><p>Quantitative (<span class="math inline">\(+\)</span>): 首周りの長さ、走行距離、高さ、価格、プログラムのなかの関数の呼び出し回数、カフェでのコーヒーの注文回数</p></li>
+</ul></li>
+</ul>
+</section><section id="ordinal-sequential-versus-diverging" class="slide level2">
+<h2>Ordinal: Sequential versus Diverging</h2>
+<ul>
+<li><p>Sequential: 一方向的な比較</p></li>
+<li><p>Diverging: 基準点からの大小比較の概念がある。例: 標高と水面下M</p></li>
+</ul>
+</section><section id="cyclic-attributes" class="slide level2">
+<h2>Cyclic Attributes</h2>
+<ul>
+<li><p>24時間</p></li>
+<li><p>1週間</p></li>
+<li><p>四半期</p></li>
+<li><p>季節</p></li>
+<li><p>年、公転周期、周期</p></li>
+</ul>
+</section></section>
+<section><section id="semantics" class="title-slide slide level1"><h1>Semantics</h1></section><section id="tables-の-semantics-key-と-value" class="slide level2">
+<h2>Tables の Semantics: Key と Value</h2>
+<ul>
+<li><p>Flat tables: <span class="math inline">\(\text {key} \rightarrow \text {value}\)</span> – Key の一意性</p></li>
+<li><p>Keyは ordinal でも categorical でもよい: <em>Bar charts</em> versus <em>Line charts</em></p></li>
+<li><p>Multidimensional tables (<em>independent keys</em> and <em>dependent values</em>)</p></li>
+</ul>
+<p><img src="lx02/fig8-tables.png"></img></p>
+</section><section id="fields-の-variables" class="slide level2">
+<h2>Fields の variables</h2>
+<ul>
+<li><p>言葉遣いが tables と異なる: <em>Independent variables</em> and <em>Dependent values</em></p></li>
+<li><p>Tables versus Fields</p>
+<p>Fields は連続場からサンプリングしている。このため特定のセルの値だけでなく、隣接したセルの値の変化に意味がある。Tables の場合は必ずしもそうではない。</p></li>
+<li><p>Multivariate Field: <em>Dependent values</em> が複数あること</p></li>
+<li><p>Multidimensional Field: <em>Independent variables</em> が複数あること</p></li>
+</ul>
+</section><section id="temporal-semantics" class="slide level2">
+<h2>Temporal Semantics</h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="/y19-vis/lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/y19-vis/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/y19-vis/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '/y19-vis/lib/reveal.js/plugin/math/math.js', async: true },
+          { src: '/y19-vis/lib/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pandoc \
+    --from markdown \
+    --to html5 --output=../docs/slides/index.html \
+    --standalone index.md
