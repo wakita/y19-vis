@@ -7,3 +7,5 @@ date: '2019 4Q'
 - [LX01: 情報可視化とは](lx01.pdf)
 
 - [LX02: データ抽象](lx02.html)
+
+- [EX01: Pandas](ex01.html)
