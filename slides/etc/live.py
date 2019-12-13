@@ -33,6 +33,7 @@ pandoc \
   --variable revealjs-url=/y19-vis/lib/reveal.js \
   --css=/y19-vis/lib/reveal.css \
   --slide-level=2 --standalone --mathjax \
+  --filter pandoc-citeproc \
   {MD}
 chrome-refresh {LURL}'''
 
@@ -40,8 +41,8 @@ def system(cmd):
     if DEBUG: print(cmd)
     os.system(cmd)
 
-os.system(f'open -a "Google Chrome" {LURL}')
 os.system(PANDOC_CMD)
+os.system(f'open -a "Google Chrome" {LURL}')
 
 class Handler(events.FileSystemEventHandler):
     def handle(self, ev):
