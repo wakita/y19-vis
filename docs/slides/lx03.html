@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Ken Wakita">
+  <meta name="dcterms.date" content="2019-12-12">
+  <title>LX3: Why - VAの目的</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/y19-vis/lib/reveal.js/css/print/pdf.css' : '/y19-vis/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/y19-vis/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">LX3: Why - VAの目的</h1>
+  <p class="author">Ken Wakita</p>
+  <p class="date">2019-12-12</p>
+</section>
+
+<section><section id="analyze-goals" class="title-slide slide level1"><h1>Analyze Goals</h1></section><section id="discover-goal" class="slide level2">
+<h2>Discover Goal</h2>
+</section><section id="present-goal" class="slide level2">
+<h2>Present Goal</h2>
+<ul>
+<li><p>プレゼンテーションのためにvisを利用するケース (e.g., PowerPoint)</p>
+<ul>
+<li>静的な図画</li>
+<li>ムービー</li>
+<li>インタラクティブなプレゼンテーション
+<ul>
+<li><a href="https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=ja">Hans Rosling’s TED talks</a></li>
+</ul></li>
+</ul></li>
+<li><p>visを利用して発見した事実をプレゼンテーションするケース。visはプレゼンテーションを意図した機能を提供するとよい。</p></li>
+</ul>
+</section><section id="enjoy-goal" class="slide level2">
+<h2>Enjoy Goal</h2>
+</section><section id="many-eyes" class="slide level2">
+<h2><a href="https://researcher.watson.ibm.com/researcher/view_group.php?id=7352&amp;mhsrc=ibmsearch_a&amp;mhq=manyeyes">Many Eyes</a></h2>
+<blockquote>
+<p>When you need a new way to {look at things, portray information, highlight critical, change your point of view},</p>
+<p>You can turn to Many Eyes.</p>
+<p>Many Eyes’ collection of data visualization use crowd sourcing to gether together fresh ideas, and then {allows / supports / challenges that community} to develop those ideas even further for themselves and to share with others.</p>
+<p>It’s collective <strong>sense</strong>making, that makes perfect sense and amazing visualizations.</p>
+<p>What can a community help you with many eyes? {refresh / react to / improve / embrace}</p>
+</blockquote>
+</section><section id="manyeyes-movies" class="slide level2">
+<h2>ManyEyes movies</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=aAYDBZt7Xk0">How to use ManyEyes</a> dataset, vis idiom, title, publish, share: email, facebook, twitter, save to image, live visualization</li>
+</ul>
+</section><section id="baby-name-wizard" class="slide level2">
+<h2><a href="http://www.babynamewizard.com/voyager#prefix=&amp;sw=m&amp;exact=false">baby name wizard</a></h2>
+<p>デザイナーの意図を離れてvisが利用されることがしばしばある。</p>
+<p>Name Voyagerは当初、新生児への命名を意図して設計されたが、新生児の親以外の多くの人々が利用している。</p>
+</section></section>
+<section><section id="produce-goals" class="title-slide slide level1"><h1>Produce Goals</h1><p>ただ、眺めるだけでなく、別の何かを得るGoal</p></section><section id="annotate" class="slide level2">
+<h2>Annotate</h2>
+<p>ユーザが既存の可視化要素（群）にテキストあるいは視覚的要素を追加すること。（例：散布図のなかの点群を投げ縄で囲って色をつける）</p>
+<p>Annotation はユーザによる、属性の付加とも考えられる。</p>
+</section><section id="record" class="slide level2">
+<h2>Record</h2>
+<p><a href="lx03/fig4-record.png"><img src="lx03/fig4-record.png"></img></a></p>
+<ul>
+<li>ブックマーク</li>
+<li>パラメタ設定</li>
+<li>対話ログ, Graphical history (上図)</li>
+<li>注釈</li>
+</ul>
+</section><section id="derive" class="slide level2">
+<h2>Derive</h2>
+<p><a href="lx03/fig5-derive.png"><img src="lx03/fig5-derive.png"></img></a></p>
+<p>既存のデータから新しいデータを派生させること。</p>
+<p>例: VxInsight - データ: 6,000種の酵母遺伝子 x 実験条件 → 18種の遺伝子発現レベル - 派生: 遺伝子発現レベルに関する類似度 &gt; 閾値 → ネットワーク → ネットワーク可視化</p>
+</section></section>
+<section><section id="mid-level-goals-search" class="title-slide slide level1"><h1>Mid-level goals: Search</h1><p><a href="lx03/fig0-search.png"><img src="lx03/fig0-search.png"></img></a></p>
+<ul>
+<li>列：何を探しているのか</li>
+<li>行：どこに探しものがあるのか</li>
+</ul></section><section id="lookup" class="slide level2">
+<h2>Lookup</h2>
+<p>例：進化の系統樹のなかでヒトを探す。脊椎動物 → 哺乳類 → 霊長類 → ヒト</p>
+</section><section id="locate" class="slide level2">
+<h2>Locate</h2>
+<p>居場所がわからない</p>
+<ul>
+<li>系統樹のなかで<a href="https://ja.wikipedia.org/wiki/哺乳類#分子系統解析による分類">ウサギはどこに</a>？</li>
+<li>メガネどこいった？</li>
+<li>犯人はどこに？</li>
+</ul>
+</section><section id="browse" class="slide level2">
+<h2>Browse</h2>
+<ul>
+<li>齧歯目にはどんな生き物がいるんだろう？</li>
+<li>6月15日の株価</li>
+</ul>
+</section><section id="explore" class="slide level2">
+<h2>Explore</h2>
+<p>どこで何を探しているのかわからない状況</p>
+<ul>
+<li>外れ値の発見</li>
+<li>階級区分図からの<a href="https://en.wikipedia.org/wiki/Choropleth_map">地理的パターンの発見</a></li>
+</ul>
+</section></section>
+<section><section id="query-goals" class="title-slide slide level1"><h1>Query Goals</h1></section><section id="identify" class="slide level2">
+<h2>Identify</h2>
+<p>lookup goal, locate goal を通して見つけたデータの詳細を眺める</p>
+</section><section id="compare" class="slide level2">
+<h2>Compare</h2>
+<p><a href="https://smartnova.github.io/tdb-reports/talks/20191203-tdb/">TDB reports</a></p>
+</section><section id="summarize" class="slide level2">
+<h2>Summarize</h2>
+<p><a href="https://vis-tools.paluno.uni-due.de/imr/">interactive Map Reports</a></p>
+<p>iMR is a demonstrator of an approach that leverages natural language text to summarize bivariate map visualizations. It uses text templates that can adapt to various datasets. The generated text and visualizations are combined into an interactive document.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="/y19-vis/lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/y19-vis/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/y19-vis/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '/y19-vis/lib/reveal.js/plugin/math/math.js', async: true },
+          { src: '/y19-vis/lib/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
