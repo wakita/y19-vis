@@ -9,3 +9,5 @@ date: '2019 4Q'
 - [LX02: データ抽象](lx02.html)
 
 - [EX01: Pandas](ex01.html)
+
+- [[LX03: Why -- Visual Analytics の目的 (1/2)](lx03.html)
