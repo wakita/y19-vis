@@ -3,31 +3,31 @@
 <head>
         <meta charset="utf-8" />
         <title>Visualization Analysis and Design - why</title>
-        <link rel="stylesheet" href="../theme/css/main.css" />
+        <link rel="stylesheet" href="/y19-vis/i68wcp/theme/css/main.css" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="../">Visualization Analysis and Design </a></h1>
+                <h1><a href="/y19-vis/i68wcp/">Visualization Analysis and Design </a></h1>
                 <nav><ul>
-                    <li><a href="../category/review.html">Review</a></li>
-                    <li><a href="../category/vabook.html">vabook</a></li>
+                    <li><a href="/y19-vis/i68wcp/category/review.html">Review</a></li>
+                    <li><a href="/y19-vis/i68wcp/category/vabook.html">vabook</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../vabook-3-7-analyzing-and-deriving-examples.html">3.7 解析と派生の例</a></h1>
+                    <h1 class="entry-title"><a href="/y19-vis/i68wcp/vabook-3-7-analyzing-and-deriving-examples.html">3.7 解析と派生の例</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2020-03-07T00:00:00+09:00">
                 Published: Sat 07 March 2020
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+                By                         <a class="url fn" href="/y19-vis/i68wcp/author/kwakita.html">kwakita</a>
         </address>
-<p>In <a href="../category/vabook.html">vabook</a>.</p>
-<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+<p>In <a href="/y19-vis/i68wcp/category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="/y19-vis/i68wcp/tag/chap03.html">chap03</a> <a href="/y19-vis/i68wcp/tag/why.html">why</a> </p>
 </footer><!-- /.post-info --><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
@@ -67,8 +67,8 @@
 <p>この例をwhat-why-how分析により完結にまとめたものを図3.11に示しました。定量指標を派生させたものが木構造の抹消部分をフィルターし、木構造のトポロジーの概要を要約することに役立っています。 <span lang="en">To summarize this example concisely in terms of a what-why-how analysis, as shown in Figure 3.11, a new quantitative attribute is derived and used to filter away the peripheral parts of a tree, in support of the task of summarizing the tree’s overall topology.</span> この前の例と同様に、木を表すのには最も一般的な表現手法としてノード・リンク図が採用されています。 <span lang="en">As in the previous example, the tree is encoded as a node-link diagram, the most common choice for tree and network arrangment.</span></p>
 <h1 id="たくさんの派生属性-deriving-many-new-attributes">3.7.3 たくさんの派生属性 <span lang="en">Deriving Many New Attributes</span></h1>
 <p>データ変換は空間的なデータに適用できます。 <span lang="en">Data transformations can shed light into spatial data as well.</span> 計算流体力学の例では特徴抽出のために連携した派生空間が利用さています。 <span class="citation" data-cites="henze-1998-feature-detection-in-linked-derived-spaces">(Henze 1998)</span> <span lang="en">In an example from computational fluid dynamics, linked derived spaces are used for feature detection <span class="citation" data-cites="henze-1998-feature-detection-in-linked-derived-spaces">(Henze 1998)</span>.</span> 図3.12に示されたvisシステムでは、ユーザは左上の派生場ペインに提示される変数のパレットからふたつの変数、あるいは派生変数について図を簡単に作成できます。 <span lang="en">The vis system shown in Figure 3.12 allows the user to quickly create plots of any two original or derived variables from the palette of variables shown in the upper left derived fields pane.</span> このような図は相互に連携していて、（訳注：選択された箇所に該当する箇所の）色がハイライトされます。 <span lang="en">The views are linked together with color highlighting.</span> このイディオムの強みは、一方のビューでは隣接した領域が別のビューで散り散りになっていないか確認できることです。 <span lang="en">The power of this idiom lies in seeing where regions that are contiguous in one view fall in the other views.</span></p>
-<p>元々のデータセットは航空機の翼に併せた曲面メッシュに沿った時変空間場です。 <span lang="en">The original dataset is a time-varying spatial field with measurements along a curvilinear mesh fitted to an airfoil.</span> <span lang="en">The plot in the physical space pane on the upper right of Figure 3.12 shows the data in this physical space, using the two spatial field variables.</span> <span lang="en">Undisturbed airflow enters the physical space from the left, and the back tip of the airfoil is on the right.</span> <span lang="en">Two important regions in back of the airfoil are distinguished with color: a red recirculation region and a yellow wake region.</span> <span lang="en">While these regions are not easy to distinguish in this physical view, they can be understood and selected more easily by interaction with the four other derived views.</span> <span lang="en">For example, in the derived space of vorticity vs enthalpy in the upper middle of Figure 3.12, the recirculation zone is distinguishable as a coherent spatial structure at the top, with the yellow wake also distinguishable beneath it.</span> <span lang="en">As the white box shows, the recirculation zone can easily be selected in this view.</span> <span lang="en">The pressure vs temperature pane in the bottom middle of Figure 3.12 shows another derived space made by plotting the pressure versus the temperature.</span> <span lang="en">In this view, the red recirculation zone and the yellow wake appear where both the pressure and temperature variables are high, in the upper right.</span> <span lang="en">Without getting into the exact technical meaning of the derived variables as used in fluid dynamics (vorticity, entropy, enthalpy, and so on), the point of this example is that many structures of interest in fluid dynamics can be seen more easily from layouts in the derived spaces.</span></p>
-<p><span lang="en">To summarize this example in terms of a what–why–how analysis, as shown in Figure 3.13, many new quantitative attributes are derived from an original spatial field dataset.</span> <span lang="en">Each pair of them is visually encoded into a view, as is the original spatial data, and the multiple juxtaposed views are coordinated with shared color coding and highlighting.</span></p>
+<p>元々のデータセットは航空機の翼に併せた曲面メッシュに沿った時変空間場です。 <span lang="en">The original dataset is a time-varying spatial field with measurements along a curvilinear mesh fitted to an airfoil.</span> 図3.12の右上にある物理空間ペインの図はふたつの空間場変数を用いて物理空間内のデータを表示しています。 <span lang="en">The plot in the physical space pane on the upper right of Figure 3.12 shows the data in this physical space, using the two spatial field variables.</span> この物理空間に攪乱されていな気流が左側から流れ込み、右側には翼の先端があります。 <span lang="en">Undisturbed airflow enters the physical space from the left, and the back tip of the airfoil is on the right.</span> 翼の後ろにあるふたつの重要な領域が赤い乱流域と黄色い流域に色分けされています。 <span lang="en">Two important regions in back of the airfoil are distinguished with color: a red recirculation region and a yellow wake region.</span> これらの領域を物理ビューから見極めることは簡単ではありませんが、ほかの4つの派生ビューを操作することで簡単に捉え、理解することができます。 <span lang="en">While these regions are not easy to distinguish in this physical view, they can be understood and selected more easily by interaction with the four other derived views.</span> たとえば、図3.12の中央上に提示されているvorticityとエンタルピーを比較する派生空間においては、乱流域は上部に凝集した領域として確認できますし、その下に黄色い流域もきれいに分離されています。 <span lang="en">For example, in the derived space of vorticity vs enthalpy in the upper middle of Figure 3.12, the recirculation zone is distinguishable as a coherent spatial structure at the top, with the yellow wake also distinguishable beneath it.</span> 白い箱のなかに見えるように乱流域はこのビューで容易に選択できます。 <span lang="en">As the white box shows, the recirculation zone can easily be selected in this view.</span> 図3.12の中央下に提示される圧力対温度ペインには圧力と温度が描かれています。 <span lang="en">The pressure vs temperature pane in the bottom middle of Figure 3.12 shows another derived space made by plotting the pressure versus the temperature.</span> このビューでは、赤い乱流域と黄色い流域はいずれも圧力変数と温度変数の高い右上に位置することがわかります。 <span lang="en">In this view, the red recirculation zone and the yellow wake appear where both the pressure and temperature variables are high, in the upper right.</span> この例で見たように、vorticity、エントロピー、エンタルピーのような流体力学についての専門知識の理解があやふやであったとしても、流体力学におけるさまざまな興味深い構造を派生空間の並びから、より簡単に見つけることができます。 <span lang="en">Without getting into the exact technical meaning of the derived variables as used in fluid dynamics (vorticity, entropy, enthalpy, and so on), the point of this example is that many structures of interest in fluid dynamics can be seen more easily from layouts in the derived spaces.</span></p>
+<p>この例をWhat-Why-How分析の面からまとめたものが図3.13です。もともとの空間的データセットから多くの量的属性を派生させていることがわかります。 <span lang="en">To summarize this example in terms of a what-why-how analysis, as shown in Figure 3.13, many new quantitative attributes are derived from an original spatial field dataset.</span> もともとの空間的データともに、これらの量的属性の組合せをビューも視覚表現した併置構成は配色とハイライトを共有化することで連携されています。 <span lang="en">Each pair of them is visually encoded into a view, as is the original spatial data, and the multiple juxtaposed views are coordinated with shared color coding and highlighting.</span></p>
 <h1 id="references">References</h1>
 <div id="refs" role="doc-bibliography">
 <div id="ref-auber-2002-using-strahler-numbers-for-real-time">
@@ -95,7 +95,7 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../vabook-3-6-how-a-preview.html" rel="bookmark"
+                    <h1><a href="/y19-vis/i68wcp/vabook-3-6-how-a-preview.html" rel="bookmark"
                            title="Permalink to 3.6 How: 概要">3.6 How: 概要</a></h1>
                 </header>
 
@@ -106,18 +106,18 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+                By                         <a class="url fn" href="/y19-vis/i68wcp/author/kwakita.html">kwakita</a>
         </address>
-<p>In <a href="../category/vabook.html">vabook</a>.</p>
-<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+<p>In <a href="/y19-vis/i68wcp/category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="/y19-vis/i68wcp/tag/chap03.html">chap03</a> <a href="/y19-vis/i68wcp/tag/why.html">why</a> </p>
 </footer><!-- /.post-info -->                Howの概要
-                <a class="readmore" href="../vabook-3-6-how-a-preview.html">read more</a>
+                <a class="readmore" href="/y19-vis/i68wcp/vabook-3-6-how-a-preview.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../vabook-3-5-targets.html" rel="bookmark"
+                    <h1><a href="/y19-vis/i68wcp/vabook-3-5-targets.html" rel="bookmark"
                            title="Permalink to 3.5 ターゲット">3.5 ターゲット</a></h1>
                 </header>
 
@@ -128,18 +128,18 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+                By                         <a class="url fn" href="/y19-vis/i68wcp/author/kwakita.html">kwakita</a>
         </address>
-<p>In <a href="../category/vabook.html">vabook</a>.</p>
-<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+<p>In <a href="/y19-vis/i68wcp/category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="/y19-vis/i68wcp/tag/chap03.html">chap03</a> <a href="/y19-vis/i68wcp/tag/why.html">why</a> </p>
 </footer><!-- /.post-info -->                ターゲット
-                <a class="readmore" href="../vabook-3-5-targets.html">read more</a>
+                <a class="readmore" href="/y19-vis/i68wcp/vabook-3-5-targets.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../vabook-3-4-actions.html" rel="bookmark"
+                    <h1><a href="/y19-vis/i68wcp/vabook-3-4-actions.html" rel="bookmark"
                            title="Permalink to 3.4 アクション">3.4 アクション</a></h1>
                 </header>
 
@@ -150,18 +150,18 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+                By                         <a class="url fn" href="/y19-vis/i68wcp/author/kwakita.html">kwakita</a>
         </address>
-<p>In <a href="../category/vabook.html">vabook</a>.</p>
-<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+<p>In <a href="/y19-vis/i68wcp/category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="/y19-vis/i68wcp/tag/chap03.html">chap03</a> <a href="/y19-vis/i68wcp/tag/why.html">why</a> </p>
 </footer><!-- /.post-info -->                アクション
-                <a class="readmore" href="../vabook-3-4-actions.html">read more</a>
+                <a class="readmore" href="/y19-vis/i68wcp/vabook-3-4-actions.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../vabook-3-2-why-analyze-tasks-abstractly.html" rel="bookmark"
+                    <h1><a href="/y19-vis/i68wcp/vabook-3-2-why-analyze-tasks-abstractly.html" rel="bookmark"
                            title="Permalink to 3.2 なぜタスクを抽象化して分析するのか？">3.2 なぜタスクを抽象化して分析するのか？</a></h1>
                 </header>
 
@@ -172,18 +172,18 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+                By                         <a class="url fn" href="/y19-vis/i68wcp/author/kwakita.html">kwakita</a>
         </address>
-<p>In <a href="../category/vabook.html">vabook</a>.</p>
-<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+<p>In <a href="/y19-vis/i68wcp/category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="/y19-vis/i68wcp/tag/chap03.html">chap03</a> <a href="/y19-vis/i68wcp/tag/why.html">why</a> </p>
 </footer><!-- /.post-info -->                なぜタスクを抽象化して分析するのか？
-                <a class="readmore" href="../vabook-3-2-why-analyze-tasks-abstractly.html">read more</a>
+                <a class="readmore" href="/y19-vis/i68wcp/vabook-3-2-why-analyze-tasks-abstractly.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../vabook-3-1-the-big-picture.html" rel="bookmark"
+                    <h1><a href="/y19-vis/i68wcp/vabook-3-1-the-big-picture.html" rel="bookmark"
                            title="Permalink to 3.1 Why: タスクの抽象化">3.1 Why: タスクの抽象化</a></h1>
                 </header>
 
@@ -194,18 +194,18 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+                By                         <a class="url fn" href="/y19-vis/i68wcp/author/kwakita.html">kwakita</a>
         </address>
-<p>In <a href="../category/vabook.html">vabook</a>.</p>
-<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+<p>In <a href="/y19-vis/i68wcp/category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="/y19-vis/i68wcp/tag/chap03.html">chap03</a> <a href="/y19-vis/i68wcp/tag/why.html">why</a> </p>
 </footer><!-- /.post-info -->                The Big Picture
-                <a class="readmore" href="../vabook-3-1-the-big-picture.html">read more</a>
+                <a class="readmore" href="/y19-vis/i68wcp/vabook-3-1-the-big-picture.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../vabook-3.html" rel="bookmark"
+                    <h1><a href="/y19-vis/i68wcp/vabook-3.html" rel="bookmark"
                            title="Permalink to Chapter 3 - Why: Task Abstraction">Chapter 3 - Why: Task Abstraction</a></h1>
                 </header>
 
@@ -216,12 +216,12 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+                By                         <a class="url fn" href="/y19-vis/i68wcp/author/kwakita.html">kwakita</a>
         </address>
-<p>In <a href="../category/vabook.html">vabook</a>.</p>
-<p>tags: <a href="../tag/chapter.html">chapter</a> <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+<p>In <a href="/y19-vis/i68wcp/category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="/y19-vis/i68wcp/tag/chapter.html">chapter</a> <a href="/y19-vis/i68wcp/tag/chap03.html">chap03</a> <a href="/y19-vis/i68wcp/tag/why.html">why</a> </p>
 </footer><!-- /.post-info -->                Chapter 3 - Why: Task Abstraction
-                <a class="readmore" href="../vabook-3.html">read more</a>
+                <a class="readmore" href="/y19-vis/i68wcp/vabook-3.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
