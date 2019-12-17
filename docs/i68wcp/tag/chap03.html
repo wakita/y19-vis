@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="utf-8" />
+        <title>Visualization Analysis and Design - chap03</title>
+        <link rel="stylesheet" href="../theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">Visualization Analysis and Design </a></h1>
+                <nav><ul>
+                    <li><a href="../category/review.html">Review</a></li>
+                    <li><a href="../category/vabook.html">vabook</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../vabook-3-7-analyzing-and-deriving-examples.html">3.7 解析と派生の例</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2020-03-07T00:00:00+09:00">
+                Published: Sat 07 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+</footer><!-- /.post-info --><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>none</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/vabook/lib/vabook.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#ふたつのイディオムの比較-comparing-two-idioms">3.7.1 ふたつのイディオムの比較 <span lang="en">Comparing Two Idioms</span></a></li>
+<li><a href="#ひとつの派生属性-deriving-one-attribute">3.7.2 ひとつの派生属性 <span lang="en">Deriving One Attribute</span></a></li>
+<li><a href="#たくさんの派生属性-deriving-many-new-attributes">3.7.3 たくさんの派生属性 <span lang="en">Deriving Many New Attributes</span></a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<p>ここでは解析と派生について3つの例を通して、今、学んだばかりの <strong>what-why-how</strong> の枠組みを利用する方法を示します。 <span lang="en">The three analysis and derivation examples below give a taste of how this what-why-how framework can be used right away.</span> 最初の例ではふたつのvisツールの比較分析を扱います。 <span lang="en">The first example covers comparative analysis between two vis tools.</span> ふたつめの例は木構造から重要度というひとつの属性を派生させることによって、トポロジー構造を要約するにあたって、表示すべき枝を決めることについて議論します。 <span lang="en">The second example discusses deriving a single attribute, an importance measure for trees to decide which branches to show to summarize its topological structure.</span> 最後の例は流体力学のデータセットについて、関心を呼ぶ属性に関する派生空間を構成することによって、新たに導入したさまざまな属性で元のデータセットを補完する方法について述べます。 <span lang="en">The third example covers deriving many new attributes and augmenting a spatial fluid dynamics dataset by creating derived spaces in which features of interest are easy to find.</span></p>
+<h1 id="ふたつのイディオムの比較-comparing-two-idioms">3.7.1 ふたつのイディオムの比較 <span lang="en">Comparing Two Idioms</span></h1>
+<p>What-why-howの枠組みは比較分析に利用することができます。たとえば、抽象的なレベルにおいて、まったく同じwhyとwhatの文脈について、どのようなイディオムを構成するかを分析するかについてふたつの異なる解が提示された場合に利用できます。 <span lang="en">The what-why-how analysis framework is useful for comparative analysis, for example, to examine two different vis tools that have different answers for the question of how the idiom is designed when used for exactly the same context of why and what at the abstraction level.</span></p>
+<p>図3.8(a)に示された<a href="http://www.cs.umd.edu/hcil/spacetree/">SpaceTree</a> <span class="citation" data-cites="plaisant-2002-spacetree-supporting-exploration-in-large-node">(Plaisant, Grosjean, and Bederson 2002)</span> と3.8(b)に示されたTree-Juxtaposer <span class="citation" data-cites="munzner-2003-treejuxtaposer-scalable-tree-comparison-using">(Munzner et al. 2003)</span> は木構造のためのvisツールですが、異なるイディオムを採用しています。 <span lang="en">SpaceTree <span class="citation" data-cites="plaisant-2002-spacetree-supporting-exploration-in-large-node">(Plaisant, Grosjean, and Bederson 2002)</span>, shown in Figure 3.8(a), and Tree-Juxtaposer <span class="citation" data-cites="munzner-2003-treejuxtaposer-scalable-tree-comparison-using">(Munzner et al. 2003)</span>, shown in Figure 3.8(b), are tree vis tools that use somewhat different idioms.</span> 両者が入力として受け取るデータはノードとリンクから構成される大きな木構造だという点は一緒です。 <span lang="en">What these tools take as input data is the same: a large tree composed of nodes and links.</span> また、（この比較分析において）両者を利用する目的も、興味深いふたつのノード間を結ぶ経路を同僚に示すという点で同じです。 <span lang="en">Why these tools are being used is for the same goal in this scenario: to present a path traced between two nodes of interest to a colleague.</span> さらに、両者ともノード間のパスを見つけ、その詳細を提示することができます。 <span lang="en">In more detail, both tools can be used to locate paths between nodes and identify them.</span></p>
+<p>ふたつのツールが採用したイディオム間には共通点があります。いずれもユーザに閲覧したり、経路を選択する機能を提供しています。 <span lang="en">Some aspects of idioms are the same: both systems allow the user to navigate and to select a path, with the result that it’s encoded differently from the nonselected paths through highlighting.</span> これらのシステムの相違点は、可視化された内容を操作し、並べる手法にあります。 <span lang="en">The systems differ in how elements of the visualization are manipulated and arranged.</span> SpaceTreeにおいては、ノードを選択することで、自動的に表示する内容を更新し、選択されずに隠されてしまうものについては内容を集約して表示します。 <span lang="en">SpaceTree ties the act of selection to a change of what is shown by automatically aggregating and filtering the unselected items.</span> 一方、TreeJuxtaposerはユーザが領域を指定して関心度に応じた表示を調整できます。 <span lang="en">In contrast, TreeJuxtaposer allows the user to arrange areas of the tree to ensure visibility for areas of interest.</span> 図3.9はこれらについてwhat-why-how分析をまとめたものです。 <span lang="en">Figure 3.9 summarizes this what-why-how analyis.</span></p>
+<h1 id="ひとつの派生属性-deriving-one-attribute">3.7.2 ひとつの派生属性 <span lang="en">Deriving One Attribute</span></h1>
+<p>複雑なネットワークや木構造を提示するvisにおいて、複雑な構造の大部分をフィルタにかけ、単純な絵にトポロジー構造の主要な側面を描く機能は有用です。 <span lang="en">In a vis showing a complex network or tree, it is useful to be able to filter out most of the complexity by drawing a simpler picture that communicates the key aspects of its topological structure.</span> このように要約する機能を提供する方法には、ノードごとのグラフ内における重要度にあたる新たな派生属性を計算したもの利用したフィルタがあります。 <span lang="en">One way to support this kind of summarization is to calculate a new derived attribute that measures the importance of each node in the graph and filter based on that attribute.</span> 重要度を計算する方法として、ネットワークトポロジを説明するためのさまざまな中心性尺度が提案されています。 <span lang="en">Many different approaches to calculating importance have been proposed; centrality metrics do so in a way that takes into account network topology.</span> Strahler数はもともとは河川の支流の構造を特徴化する目的で水門地理学において提案された重要度指数なのですが、木構造やネットワーク構造にも応用さるために拡張された概念です。<span class="citation" data-cites="auber-2002-using-strahler-numbers-for-real-time">(Auber 2002)</span> <span lang="en">The Strahler number is a measure of node importance originally developed in hydrogeology to characterize the branching structure of rivers that has been adapted and extended for use visualizing trees and networks <span class="citation" data-cites="auber-2002-using-strahler-numbers-for-real-time">(Auber 2002)</span>.</span> 中心のノードには大きなStrahler数が与えられる一方、周辺域のノードの値は小さくなります。 <span lang="en">Very central nodes have large Strahler numbers, whereas peripheral nodes have low values.</span> ネットワークデータの指標には、ノードの周辺のわずかばかりの近傍について単純かつ局所的な計算を利用することもありますが、Strahler数は複雑かつ大域的な計算を施す派生属性の一例です。 <span lang="en">The Strahler number is an example of a derived attribute for network data that is the result of a complex and global computation, rather than simply a local calculation on a small neighborhood around a node.</span></p>
+<p>図3.10はStrahler派生属性に基づいたフィルタを適用して木構造を効果的に要約した様子を示しています。 <span lang="en">Figure 3.10 shows an example of filtering according to the Strahler derived attribute to summarize a tree effectively.</span> （Strahler派生属性について）トップ5,000ノードとそれらの連結関係のみを表示して得られた図3.10(a)は完全な木の骨組を完結に表現しています。一方、図3.10(b)は50万以上のノードを表示しています。 <span lang="en">The result of drawing only the top-ranked 5000 nodes and the links that connect them is a recognizable skeleton of the full tree, shown in Figure 3.10(a), while over a half million nodes are shown in Figure 3.10(b).</span> 仮に5,000個のノードを無作為に選択して描いても、そこに描かれた構造は理解不能でしょう。 <span lang="en">In contrast, if the 5000 nodes to draw were picked randomly, the structure would not be understandable.</span> 左右いずれのネットワークもStrahler数にしたがって色づけすることで、ネットワークの中心性尺度の変化を示しています。 <span lang="en">Both versions of the network are also colored according to the Strahler number, to show how the centrality measure varies within the network.</span></p>
+<p><a href="/vabook/assets/chap03/fig11-wwh-strahler.png">Figure 3.11</a></p>
+<p>この例をwhat-why-how分析により完結にまとめたものを図3.11に示しました。定量指標を派生させたものが木構造の抹消部分をフィルターし、木構造のトポロジーの概要を要約することに役立っています。 <span lang="en">To summarize this example concisely in terms of a what-why-how analysis, as shown in Figure 3.11, a new quantitative attribute is derived and used to filter away the peripheral parts of a tree, in support of the task of summarizing the tree’s overall topology.</span> この前の例と同様に、木を表すのには最も一般的な表現手法としてノード・リンク図が採用されています。 <span lang="en">As in the previous example, the tree is encoded as a node-link diagram, the most common choice for tree and network arrangment.</span></p>
+<h1 id="たくさんの派生属性-deriving-many-new-attributes">3.7.3 たくさんの派生属性 <span lang="en">Deriving Many New Attributes</span></h1>
+<p>データ変換は空間的なデータに適用できます。 <span lang="en">Data transformations can shed light into spatial data as well.</span> 計算流体力学の例では特徴抽出のために連携した派生空間が利用さています。 <span class="citation" data-cites="henze-1998-feature-detection-in-linked-derived-spaces">(Henze 1998)</span> <span lang="en">In an example from computational fluid dynamics, linked derived spaces are used for feature detection <span class="citation" data-cites="henze-1998-feature-detection-in-linked-derived-spaces">(Henze 1998)</span>.</span> 図3.12に示されたvisシステムでは、ユーザは左上の派生場ペインに提示される変数のパレットからふたつの変数、あるいは派生変数について図を簡単に作成できます。 <span lang="en">The vis system shown in Figure 3.12 allows the user to quickly create plots of any two original or derived variables from the palette of variables shown in the upper left derived fields pane.</span> このような図は相互に連携していて、（訳注：選択された箇所に該当する箇所の）色がハイライトされます。 <span lang="en">The views are linked together with color highlighting.</span> このイディオムの強みは、一方のビューでは隣接した領域が別のビューで散り散りになっていないか確認できることです。 <span lang="en">The power of this idiom lies in seeing where regions that are contiguous in one view fall in the other views.</span></p>
+<p>元々のデータセットは航空機の翼に併せた曲面メッシュに沿った時変空間場です。 <span lang="en">The original dataset is a time-varying spatial field with measurements along a curvilinear mesh fitted to an airfoil.</span> <span lang="en">The plot in the physical space pane on the upper right of Figure 3.12 shows the data in this physical space, using the two spatial field variables.</span> <span lang="en">Undisturbed airflow enters the physical space from the left, and the back tip of the airfoil is on the right.</span> <span lang="en">Two important regions in back of the airfoil are distinguished with color: a red recirculation region and a yellow wake region.</span> <span lang="en">While these regions are not easy to distinguish in this physical view, they can be understood and selected more easily by interaction with the four other derived views.</span> <span lang="en">For example, in the derived space of vorticity vs enthalpy in the upper middle of Figure 3.12, the recirculation zone is distinguishable as a coherent spatial structure at the top, with the yellow wake also distinguishable beneath it.</span> <span lang="en">As the white box shows, the recirculation zone can easily be selected in this view.</span> <span lang="en">The pressure vs temperature pane in the bottom middle of Figure 3.12 shows another derived space made by plotting the pressure versus the temperature.</span> <span lang="en">In this view, the red recirculation zone and the yellow wake appear where both the pressure and temperature variables are high, in the upper right.</span> <span lang="en">Without getting into the exact technical meaning of the derived variables as used in fluid dynamics (vorticity, entropy, enthalpy, and so on), the point of this example is that many structures of interest in fluid dynamics can be seen more easily from layouts in the derived spaces.</span></p>
+<p><span lang="en">To summarize this example in terms of a what–why–how analysis, as shown in Figure 3.13, many new quantitative attributes are derived from an original spatial field dataset.</span> <span lang="en">Each pair of them is visually encoded into a view, as is the original spatial data, and the multiple juxtaposed views are coordinated with shared color coding and highlighting.</span></p>
+<h1 id="references">References</h1>
+<div id="refs" role="doc-bibliography">
+<div id="ref-auber-2002-using-strahler-numbers-for-real-time">
+<p>Auber, David. 2002. “Using Strahler numbers for real time visual exploration of huge graphs.” In <em>International Conference on Computer Vision and Graphics</em>, 1-3:56–69. Czech Republic. <a href="https://hal.archives-ouvertes.fr/hal-00307631">https://hal.archives-ouvertes.fr/hal-00307631</a>.</p>
+</div>
+<div id="ref-henze-1998-feature-detection-in-linked-derived-spaces">
+<p>Henze, C. 1998. “Feature Detection in Linked Derived Spaces.” In <em>Proceedings Visualization ’98 (Cat. No.98CB36276)</em>, 87–94. <a href="https://doi.org/10.1109/VISUAL.1998.745289">https://doi.org/10.1109/VISUAL.1998.745289</a>.</p>
+</div>
+<div id="ref-munzner-2003-treejuxtaposer-scalable-tree-comparison-using">
+<p>Munzner, Tamara, François Guimbretière, Serdar Tasiran, Li Zhang, and Yunhong Zhou. 2003. “TreeJuxtaposer: Scalable Tree Comparison Using Focus+context with Guaranteed Visibility.” In <em>ACM Siggraph 2003 Papers</em>, 453–62. SIGGRAPH ’03. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/1201775.882291">https://doi.org/10.1145/1201775.882291</a>.</p>
+</div>
+<div id="ref-plaisant-2002-spacetree-supporting-exploration-in-large-node">
+<p>Plaisant, C., J. Grosjean, and B. B. Bederson. 2002. “SpaceTree: Supporting Exploration in Large Node Link Tree, Design Evolution and Empirical Evaluation.” In <em>IEEE Symposium on Information Visualization, 2002. INFOVIS 2002.</em>, 57–64. <a href="https://doi.org/10.1109/INFVIS.2002.1173148">https://doi.org/10.1109/INFVIS.2002.1173148</a>.</p>
+</div>
+</div>
+</body>
+</html>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../vabook-3-6-how-a-preview.html" rel="bookmark"
+                           title="Permalink to 3.6 How: 概要">3.6 How: 概要</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-06T00:00:00+09:00">
+                Published: Fri 06 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+</footer><!-- /.post-info -->                Howの概要
+                <a class="readmore" href="../vabook-3-6-how-a-preview.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../vabook-3-5-targets.html" rel="bookmark"
+                           title="Permalink to 3.5 ターゲット">3.5 ターゲット</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-05T00:00:00+09:00">
+                Published: Thu 05 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+</footer><!-- /.post-info -->                ターゲット
+                <a class="readmore" href="../vabook-3-5-targets.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../vabook-3-4-actions.html" rel="bookmark"
+                           title="Permalink to 3.4 アクション">3.4 アクション</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-04T00:00:00+09:00">
+                Published: Wed 04 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+</footer><!-- /.post-info -->                アクション
+                <a class="readmore" href="../vabook-3-4-actions.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../vabook-3-3-who-designer-or-user.html" rel="bookmark"
+                           title="Permalink to 3.3 誰：デザイナーかユーザーか">3.3 誰：デザイナーかユーザーか</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-03T00:00:00+09:00">
+                Published: Tue 03 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/who.html">who</a> </p>
+</footer><!-- /.post-info -->                visのデザインを主導的に決めるのは誰か？デザイナーなのか、それともvisのユーザーなのか。
+                <a class="readmore" href="../vabook-3-3-who-designer-or-user.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../vabook-3-2-why-analyze-tasks-abstractly.html" rel="bookmark"
+                           title="Permalink to 3.2 なぜタスクを抽象化して分析するのか？">3.2 なぜタスクを抽象化して分析するのか？</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-02T00:00:00+09:00">
+                Published: Mon 02 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+</footer><!-- /.post-info -->                なぜタスクを抽象化して分析するのか？
+                <a class="readmore" href="../vabook-3-2-why-analyze-tasks-abstractly.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../vabook-3-1-the-big-picture.html" rel="bookmark"
+                           title="Permalink to 3.1 Why: タスクの抽象化">3.1 Why: タスクの抽象化</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-01T00:00:00+09:00">
+                Published: Sun 01 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+</footer><!-- /.post-info -->                The Big Picture
+                <a class="readmore" href="../vabook-3-1-the-big-picture.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../vabook-3.html" rel="bookmark"
+                           title="Permalink to Chapter 3 - Why: Task Abstraction">Chapter 3 - Why: Task Abstraction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-12-03T00:00:00+09:00">
+                Published: Tue 03 December 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="../category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="../tag/chapter.html">chapter</a> <a href="../tag/chap03.html">chap03</a> <a href="../tag/why.html">why</a> </p>
+</footer><!-- /.post-info -->                Chapter 3 - Why: Task Abstraction
+                <a class="readmore" href="../vabook-3.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

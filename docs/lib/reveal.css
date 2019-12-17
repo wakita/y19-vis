@@ -20,6 +20,10 @@
   color: #f88;
 }
 
+.slides em {
+  color: #f8f;
+}
+
 .reveal dt {
   color: #88f;
 }

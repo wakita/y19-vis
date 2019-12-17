@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="utf-8" />
+        <title>3.5 ターゲット</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">Visualization Analysis and Design </a></h1>
+                <nav><ul>
+                    <li><a href="./category/review.html">Review</a></li>
+                    <li class="active"><a href="./category/vabook.html">vabook</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./vabook-3-5-targets.html" rel="bookmark"
+           title="Permalink to 3.5 ターゲット">3.5 ターゲット</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-05T00:00:00+09:00">
+                Published: Thu 05 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/kwakita.html">kwakita</a>
+        </address>
+<p>In <a href="./category/vabook.html">vabook</a>.</p>
+<p>tags: <a href="./tag/chap03.html">chap03</a> <a href="./tag/why.html">why</a> </p>
+</footer><!-- /.post-info -->      <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>none</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/vabook/lib/vabook.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>図3.6は4種の抽象化されたターゲットを描いています。前節で紹介したアクションが参照する<strong>ターゲット</strong>は、ユーザが関心を示すデータについての何がしかの側面を意味します。アクション（に与えられた英語の名称）は動詞でしたが、ターゲットには名詞をあてています。<code>Search</code>アクションと<code>Query</code>アクションでは、それぞれのターゲットは明確でしょう。一方、<code>Use</code>アクションではターゲットはさほど明確ではないかもしれませんけれど、無縁というわけではありません。たとえば、ユーザが発表する内容や発見を試みる対象物がターゲットにあたります。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>三つの高レベルターゲット（<code>trends</code>, <code>outliers</code>, <code>features</code>）はあらゆるデータに広く該当します。<strong>Trend</strong>はデータに表れるパターンを高度に特徴づけたものです。<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>たとえば、上昇、下降、山、谷、停滞などのデータの傾向が該当します。ほとんどのデータにおいて、そういった全体の傾向には合致しない<strong>outlier</strong>(<strong>外れ値</strong>)と呼ばれるものが出現します。<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a><strong>feature</strong>はタスクにおいて興味深いなんらかの構造です。ですのでfeatureはタスク依存です。</p>
+<p>Attributeは視覚的に表現されるデータの特性です。Attributeのターゲットにおいて、もっとも単純なものは特定の値を見つけることがあります。ほかにも、一定の範囲内の最大値や最小値などのターゲットを見つけることもあります。頻繁に利用される、より高度な視点のターゲットとしてはattributeの値の分布が挙げられます。</p>
+<p><em>依存関係</em>、<em>相関</em>、<em>類似性</em>のように、ターゲットによっては複数のattributeを対象とするものがあります。あるattributeが別のattributeに依存するということは、後者の値が後者の値に依存することを意味します。あるattributeの値が別のattributeの値に関連するとき、これらのあいだに<strong>相関</strong>があるといいます。ふたつのattributeの類似性 (similarity) は、これらの値について、なんらかの定量尺度を用れば、attributeを類似度に応じて順位づけしたり、違いを論じることができます。</p>
+<p>このように傾向、外れ値、分布、相関について把握する抽象タスクはvisを利用する格好の理由となります。これらはドメインに特化して語彙のなかで様々に呼ばれますが、抽象化することで、即座に眺められます。</p>
+<p>いくつかのターゲットはデータセットの種類に特化しています。ネットワークデータはノード間の関係をリンクとして定めます。このようなデータにおいて本質的なターゲットは連結関係の構造、つまりネットワークのトポロジーの理解です。トポロジーターゲットには、複数のリンクを介して繋がるノード<strong>経路</strong> (<strong>path</strong>)の理解があります。空間的データについて、ユーザのアクションにしばしば表れるのは、地理的形状の理解と比較でる。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><code>present</code>アクションと<code>analysis</code>アクションを指しています。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>…<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>…<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

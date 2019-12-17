@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Ken Wakita">
+  <meta name="dcterms.date" content="2019-12-16">
+  <title>LX4: Why - VAの目的 (2/2)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="/y19-vis/lib/reveal.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/y19-vis/lib/reveal.js/css/print/pdf.css' : '/y19-vis/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/y19-vis/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">LX4: Why - VAの目的 (2/2)</h1>
+  <p class="author">Ken Wakita</p>
+  <p class="date">2019-12-16</p>
+</section>
+
+<section id="targets" class="title-slide slide level1"><h1>3.5: Targets</h1><dl>
+<dt>Target</dt>
+<dd><p><strong>Actions</strong> が参照する先のデータ</p>
+<p>targetは名詞、actionは動詞</p>
+</dd>
+</dl></section>
+<section id="kinds-of-targets" class="title-slide slide level1"><h1>4 kinds of <strong>Targets</strong></h1><table>
+<thead>
+<tr class="header">
+<th>Kinds</th>
+<th>Targets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>All Data</strong></td>
+<td>Trends / Outliers / Features</td>
+</tr>
+<tr class="even">
+<td><strong>Attributes</strong></td>
+<td>One / Many</td>
+</tr>
+<tr class="odd">
+<td><strong>Network</strong></td>
+<td>Topology, Path</td>
+</tr>
+<tr class="even">
+<td><strong>Spatial</strong></td>
+<td>Shape</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<ul>
+<li>trend: データ中のパターン</li>
+<li>outlier (外れ値): データの背景となる事象から外れたデータ</li>
+<li><dl>
+<dt>feature: タスクに依存した興味深い構造</dt>
+<dd>
+</dd>
+</dl></li>
+</ul>
+</aside></section>
+<section id="how-a-preview" class="title-slide slide level1"><h1>3.6: How: A Preview</h1></section>
+<section><section id="analyzing-and-deriving-examples" class="title-slide slide level1"><h1>3.7: Analyzing and Deriving: Examples</h1><ul>
+<li><p>3.7.1: Comparing <em>two idioms</em></p></li>
+<li><p>3.7.2: Deriving <em>one attribute</em></p></li>
+<li><p>3.7.3: Deriving <em>many new attributes</em></p></li>
+</ul>
+<aside class="notes">
+<p>この節の構造が <strong>3.4.2.3 – Derive</strong> の説明の構造に対応している</p>
+</aside></section><section id="comparing-two-idioms" class="slide level2">
+<h2>3.7.1: Comparing two idioms</h2>
+</section><section id="deriving-one-attribute" class="slide level2">
+<h2>3.7.2: Deriving one attribute</h2>
+</section><section id="deriving-many-new-attributes" class="slide level2">
+<h2>3.7.3: Deriving many new attributes</h2>
+</section></section>
+<section id="参考文献" class="title-slide slide level1"><h1>参考文献</h1></section>
+    </div>
+  </div>
+
+  <script src="/y19-vis/lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/y19-vis/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/y19-vis/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '/y19-vis/lib/reveal.js/plugin/math/math.js', async: true },
+          { src: '/y19-vis/lib/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
