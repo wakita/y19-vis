@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
         <meta charset="utf-8" />
-        <title>2.4 データセットの型</title>
+        <title>4.3 ４つのレベル</title>
         <link rel="stylesheet" href="../../theme/css/main.css" />
 </head>
 
@@ -14,7 +14,7 @@
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
-    <h1 class="entry-title">2.4 データセットの型</h1>
+    <h1 class="entry-title">4.3 ４つのレベル</h1>
     
     <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
@@ -35,7 +35,10 @@
   <![endif]-->
 </head>
 <body>
-
+<p><span lang="en">Splitting the complex problem of vis design into four cascading levels provides an analysis framework that lets you address different concerns separately.</span> <span lang="en">Figure 4.2 shows these four levels.</span> <span lang="en">At the top is the situation level, where you consider the details of a particular application domain for vis.</span> <span lang="en">Next is the what-why abstraction level, where you map those domain-specific problems and data into forms that are independent of the domain.</span> <span lang="en">The following how level is the design of idioms that specify the approach to visual encoding and interaction.</span> <span lang="en">Finally, the last level is the design of algorithms to instantiate those idioms computationally.</span></p>
+<p><span lang="en">These levels are nested; the output from an upstream level above is input to the downstream level below.</span> <span lang="en">A block is the outcome of the design process at that level.</span> <span lang="en">The challenge of this nesting is that choosing the wrong block at an upstream level inevitably cascades to all downstream levels.</span> <span lang="en">If you make a poor choice in the abstraction stage, then even perfect choices at the idiom and algorithm levels will not result in a vis system that solves the intended problem.</span></p>
+<p><span lang="en">The value of separating these concerns into four levels is that you can separately analyze the question of whether each level has been addressed correctly, independently of whatever order design decisions were made in the process of building the vis tool.</span> <span lang="en">Although I encourage you to consider these four levels separately for analysis, in practice you wouldn’t finalize design decisions at one level before moving on to the next.</span></p>
+<p><span lang="en">Vis design is usually a highly iterative refinement process, where a better understanding of the blocks at one level will feed back and forward into refining the blocks at the other levels.</span> <span lang="en">Thus, it is one of many examples of the principle of design as redesign [Green 89].</span></p>
 </body>
 </html>
 
