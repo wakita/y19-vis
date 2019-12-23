@@ -11,3 +11,5 @@ date: '2019 4Q'
 - [EX01: Pandas](ex01.html)
 
 - [LX03: Why -- Visual Analytics の目的 (1/2)](lx03.html)
+
+- [LX05: MarkとChannel - そして vis の心理的な側面](lx05.pdf)
