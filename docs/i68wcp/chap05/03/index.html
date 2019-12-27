@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="utf-8" />
+        <title>5.3 MarkとChannelの定め方</title>
+        <link rel="stylesheet" href="../../theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../">Visualization Analysis and Design </a></h1>
+                <nav><ul>
+                    <li><a href="/y19-vis/i68wcp/vabook/toc/">目次</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">5.3 MarkとChannelの定め方</h1>
+    
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>none</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/y19-vis/i68wcp/lib/vabook.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>マークは画像内の基本的な図形要素です。 <span lang="en">A mark is a basic graphical element in an image.</span> マークはそれ以上不可分な形状で、そのために要する空間次元数に応じて分類できます。 <span lang="en">Marks are geometric primitive objects classified according to the number of spatial dimensions they require.</span> 図5.2に示された例を見ていきましょう。点は0次元(0D)のマークです。線は1次元(1D)のマークで、領域は2次元(2D)マークです。 <span lang="en">Figure 5.2 shows examples: a zerodimensional (0D) mark is a point, a one-dimensional (1D) mark is a line, and a two-dimensional (2D) mark is an area.</span> 3次元(3D)の空間的なマークもないわけではありませんが、あまり利用されません。 <span lang="en">A threedimensional (3D) volume mark is possible, but they are not frequently used.</span></p>
+<p><span lang="en">A visual channel is a way to control the appearance of marks, independent of the dimensionality of the geometric primitive.</span> <span lang="en">Figure 5.3 shows a few of the many visual channels that can encode information as properties of a mark.</span> <span lang="en">Some pertain to spatial position, including aligned planar position, unaligned planar position, depth (3D position), and spatial region.</span> <span lang="en">Others pertain to color, which has three distinct aspects: hue, saturation, and luminance.</span> <span lang="en">There are three size channels, one for each added dimension: length is 1D size, area is 2D size, and volume is 3D size.</span> <span lang="en">The motion-oriented channels include the motion pattern, for instance, oscillating circles versus straight jumps, the direction of motion, and the velocity.</span> <span lang="en">Angle is also a channel, sometimes called tilt.</span> <span lang="en">Curvature is also a visual channel.</span></p>
+<p><span lang="en">Shape is a complex phenomenon, but it is treated as a channel in this framework.</span></p>
+<p><span lang="en">Figure 5.4.</span> <span lang="en">Using marks and channels.</span> <span lang="en">(a) Bar charts encode two attributes using a line mark with the vertical spatial position channel for the quantitative attribute, and the horizontal spatial position channel for the categorical attribute.</span> <span lang="en">(b) Scatterplots encode two quantitative attributes using point marks and both vertical and horizontal spatial position.</span> <span lang="en">(c) A third categorical attribute is encoded by adding color to the scatterplot.</span> <span lang="en">(d) Adding the visual channel of size encodes a fourth quantitative attribute as well.</span></p>
+<p><span lang="en">Figure 5.4 shows a progression of chart types, with each showing one more quantitative data attribute by using one more visual channel.</span> <span lang="en">A single quantitative attribute can be encoded with vertical spatial position.</span> <span lang="en">Bar charts are a common example of this encoding: the height of the bar conveys a quantitative value for that attribute, as in Figure 5.4(a).</span> <span lang="en">Bar charts show two attributes, but only one is quantitative: the other is the categorical attribute used to spread out the bars along the axis (in this case, the horizontal axis).</span> <span lang="en">A second, independent quantitative attribute can be encoded by using the visual channel of horizontal spatial position to directly encode information.</span> <span lang="en">It doesn’t make sense any more to use a line for the mark in this case, so the mark type needs to be a point.</span> <span lang="en">This visual encoding, shown in Figure 5.4(b), is a scatterplot.</span> <span lang="en">You cannot continue to add more spatial position channels when creating drawings in two-dimensional space, but many visual channels are nonspatial.</span> <span lang="en">An additional categorical data attribute can be encoded in a scatterplot format using the visual channel of hue (one aspect of color), as in Figure 5.4(c).</span> <span lang="en">Figure 5.4(d) shows the addition of a fourth quantitative attribute encoded with the visual channel of size.</span></p>
+<p><span lang="en">In these examples, each attribute is encoded with a single channel.</span> <span lang="en">Multiple channels can be combined to redundantly encode the same attribute.</span> <span lang="en">The limitation of this approach is that more channels are “used up” so that not as many attributes can be encoded in total, but the benefit is that the attributes that are shown will be very easily perceived.</span> <span lang="en">The size and shape channels cannot be used on all types of marks: the higher-dimensional mark types usually have built-in constraints that arise from the way that they are defined.</span> <span lang="en">An area mark has both dimensions of its size constrained intrinsically as part of its shape, so area marks typically are not size coded or shape coded.</span> <span lang="en">For example, an area mark denoting a state or province within a country on a geographic map already has a certain size, and thus attempting to size code the mark with an additional attribute usually doesn’t make sense.1 Similarly, the treemap visual encoding idiom shows the hierarchical structure of a tree using nested area marks; Figure 9.8 shows an example.</span> <span lang="en">The size of these marks is determined by an existing attribute that was used in construction of the treemap, as is their shape and position.</span> <span lang="en">Changing the size of a mark according to an additional attribute would destroy the meaning of the visual encoding.</span></p>
+<p><span lang="en">A line mark that encodes a quantitative attribute using length in one direction can be size coded in the other dimension by changing the width of the line to make it fatter.</span> <span lang="en">However, it can’t be size coded in the first direction to make it longer because its length is already “taken” with the length coding and can’t be co-opted by a second attribute.</span> <span lang="en">For example, the bars in Figure 5.4(a) can’t be size coded vertically.</span> <span lang="en">Thus, even though lines are often considered to be infinitely thin objects in mathematical contexts, line marks used in visual encoding do take up a nonzero amount of area.</span> <span lang="en">They can be made wider on an individual basis to encode an additional attribute, or an entire set of bars can simply be made wider in a uniform way to be more visible.</span></p>
+<p><span lang="en">Point marks can indeed be size coded and shape coded because their area is completely unconstrained.</span> <span lang="en">For instance, the circles of varying size in the Figure 5.4(d) scatterplot are point marks that have been size coded, encoding information in terms of their area.</span> <span lang="en">An additional categorical attribute could be encoded by changing the shape of the point as well, for example, to a cross or a triangle instead of a circle.</span> <span lang="en">This meaning of the term point is different than the mathematical context where it implies something that is infinitely small in area and cannot have a shape.</span> <span lang="en">In the context of visual encoding, point marks intrinsically convey information only about position and are exactly the vehicle for conveying additional information through area and shape.</span></p>
+<p><span lang="en">The cartogram visual encoding idiom, where exactly this kind of size coding of an additional attribute on a set of geographic regions is carried out, is an exception.</span> <span lang="en">This idiom carefully alters the boundaries with a unified calculation that guarantees that the borders remain contiguous while attempting to preserve each area’s shape as much as possible.</span></p>
+<p><span lang="en">5.3.1 Channel Types</span></p>
+<p><span lang="en">The human perceptual system has two fundamentally different kinds of sensory modalities.</span> <span lang="en">The identity channels tell us information about what something is or where it is.</span> <span lang="en">In contrast, the magnitude channels tell us how much of something there is.</span></p>
+<p><span lang="en">For instance, we can tell what shape we see: a circle, a triangle, or a cross.</span> <span lang="en">It does not make much sense to ask magnitude questions for shape.</span> <span lang="en">Other what visual channels are shape, the color channel of hue, and motion pattern.</span> <span lang="en">We can tell what spatial region marks are within, and where the region is.</span></p>
+<p><span lang="en">In contrast, we can ask about magnitudes with line length: how much longer is this line than that line?</span> <span lang="en">And identity is not a productive question, since both objects are lines.</span> <span lang="en">Similarly, we can ask luminance questions about how much darker one mark is than another, or angle questions about how much space is between a pair of lines, or size questions about how much bigger one mark is than another.</span> <span lang="en">Many channels give us magnitude information, including the size channels of length, area, and volume; two of the three color channels, namely, luminance and saturation; and tilt.</span></p>
+<p><span lang="en">In the psychophysics literature, the identity channels are called metathetic or what-where, and the magnitude channels are called prothetic or how much.</span></p>
+<p><span lang="en">5.3.2 Mark Types</span></p>
+<p><span lang="en">The discussion so far has been focused on table datasets, where a mark always represents an item.</span> <span lang="en">For network datasets, a mark might represent either an item–also known as a node–or a link.</span> <span lang="en">Link marks represent a relationship between items.</span> <span lang="en">The two link mark types are connection and containment.</span> <span lang="en">A connection mark shows a pairwise relationship between two items, using a line.</span> <span lang="en">A containment mark shows hierarchical relationships using areas, and to do so connection marks can be nested within each other at multiple levels.</span> <span lang="en">While the visual representation of the area mark might be with a line that depicts its boundary, containment is fundamentally about the use of area.</span> <span lang="en">Links cannot be represented by points, even though individual items can be.</span> <span lang="en">Figure 5.5 summarizes the possibilities.</span></p>
+<p><span lang="en">Synonyms for containment are enclosure and nesting.</span></p>
+</body>
+</html>
+
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://www.cs.ubc.ca/~tmm/vadbook/">Tamara Munzner</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

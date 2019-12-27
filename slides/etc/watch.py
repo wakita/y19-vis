@@ -6,14 +6,14 @@
 # npm install -g mac-chrome
 #
 
-python='echo "Python not found"'
-for p in /usr/local/anaconda3/envs/py37/bin/python /Users/wakita/.pyenv/versions/miniconda-latest/envs/py37/bin/python; do
-    if [ -x "$p" ]; then
-        python=$p; break
-    fi
-done
+#python='echo "Python not found"'
+#for p in /usr/local/anaconda3/envs/py37/bin/python /Users/wakita/.pyenv/versions/miniconda-latest/envs/py37/bin/python; do
+#    if [ -x "$p" ]; then
+#        python=$p; break
+#    fi
+#done
 
-$python << End_of_Python3
+python << End_of_Python3
 
 import json, os, re, sys, time
 

@@ -13,3 +13,5 @@ date: '2019 4Q'
 - [LX03: Why -- Visual Analytics の目的 (1/2)](lx03.html)
 
 - [LX05: MarkとChannel - そして vis の心理的な側面](lx05.pdf)
+
+- [LX06: 表の配置](lx06.pdf)

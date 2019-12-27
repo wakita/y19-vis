@@ -3,14 +3,16 @@
 const format = require('util').format;
 const fs = require('fs');
 
+const prefix = 'index'
+
 const C = {
-  MD: 'lx03.md',
+  MD: prefix + '.md',
 
   DROOT: '/Users/wakita/Dropbox/doc/classes/q4-vis/docs',
   LSITE: 'http://localhost:8000/y19-vis',
   GSITE: 'https://wakita.github.io/y19-vis',
 
-  PAGE: 'slides/lx03.html',
+  PAGE: 'slides/' + prefix + '.html',
   HTML: '%s/%s',
 
   LURL: '%s/%s',

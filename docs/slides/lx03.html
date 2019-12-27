@@ -12,10 +12,12 @@
   <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reset.css">
   <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="/y19-vis/lib/reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="/y19-vis/lib/reveal.css"/>
@@ -41,9 +43,11 @@
   <p class="date">2019-12-12</p>
 </section>
 
-<section><section id="analyze-goals" class="title-slide slide level1"><h1>Analyze Goals</h1></section><section id="discover-goal" class="slide level2">
+<section><section id="analyze-goals" class="title-slide slide level1"><h1>Analyze Goals</h1></section>
+<section id="discover-goal" class="slide level2">
 <h2>Discover Goal</h2>
-</section><section id="present-goal" class="slide level2">
+</section>
+<section id="present-goal" class="slide level2">
 <h2>Present Goal</h2>
 <ul>
 <li><p>プレゼンテーションのためにvisを利用するケース (e.g., PowerPoint)</p>
@@ -57,11 +61,13 @@
 </ul></li>
 <li><p>visを利用して発見した事実をプレゼンテーションするケース。visはプレゼンテーションを意図した機能を提供するとよい。</p></li>
 </ul>
-</section><section id="enjoy-goal" class="slide level2">
+</section>
+<section id="enjoy-goal" class="slide level2">
 <h2>Enjoy Goal</h2>
-</section><section id="many-eyes" class="slide level2">
+</section>
+<section id="many-eyes" class="slide level2">
 <h2><a href="https://researcher.watson.ibm.com/researcher/view_group.php?id=7352&amp;mhsrc=ibmsearch_a&amp;mhq=manyeyes">Many Eyes</a></h2>
-<p>Many Eyes: <span class="citation" data-cites="viegas-2007-manyeyes-a-site-for-visualization-at-internet-scale">(Viegas et al. 2007)</span>.</p>
+<p>Many Eyes: <span class="citation" data-cites="viegas-2007-manyeyes-a-site-for-visualization-at-internet-scale">[@viegas-2007-manyeyes-a-site-for-visualization-at-internet-scale]</span>.</p>
 <blockquote>
 <p>When you need a new way to {look at things, portray information, highlight critical, change your point of view},</p>
 <p>You can turn to Many Eyes.</p>
@@ -69,30 +75,35 @@
 <p>It’s collective <strong>sense</strong>making, that makes perfect sense and amazing visualizations.</p>
 <p>What can a community help you with many eyes? {refresh / react to / improve / embrace}</p>
 </blockquote>
-</section><section id="manyeyes-movies" class="slide level2">
+</section>
+<section id="manyeyes-movies" class="slide level2">
 <h2>ManyEyes movies</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=aAYDBZt7Xk0">How to use ManyEyes</a> dataset, vis idiom, title, publish, share: email, facebook, twitter, save to image, live visualization</li>
 </ul>
-</section><section id="baby-name-wizard" class="slide level2">
+</section>
+<section id="baby-name-wizard" class="slide level2">
 <h2><a href="http://www.babynamewizard.com/voyager#prefix=&amp;sw=m&amp;exact=false">baby name wizard</a></h2>
 <p>デザイナーの意図を離れてvisが利用されることがしばしばある。</p>
-<p>Name Voyager <span class="citation" data-cites="wattenberg-2005-baby-names-visualization-and-social-data">(Wattenberg 2005)</span> は当初、新生児への命名を意図して設計されたが、新生児の親以外の多くの人々が利用している。</p>
+<p>Name Voyager <span class="citation" data-cites="wattenberg-2005-baby-names-visualization-and-social-data">[@wattenberg-2005-baby-names-visualization-and-social-data]</span> は当初、新生児への命名を意図して設計されたが、新生児の親以外の多くの人々が利用している。</p>
 </section></section>
-<section><section id="produce-goals" class="title-slide slide level1"><h1>Produce Goals</h1><p>ただ、眺めるだけでなく、別の何かを得るGoal</p></section><section id="annotate" class="slide level2">
+<section><section id="produce-goals" class="title-slide slide level1"><h1>Produce Goals</h1><p>ただ、眺めるだけでなく、別の何かを得るGoal</p></section>
+<section id="annotate" class="slide level2">
 <h2>Annotate</h2>
 <p>ユーザが既存の可視化要素（群）にテキストあるいは視覚的要素を追加すること。（例：散布図のなかの点群を投げ縄で囲って色をつける）</p>
 <p>Annotation はユーザによる、属性の付加とも考えられる。</p>
-</section><section id="record" class="slide level2">
+</section>
+<section id="record" class="slide level2">
 <h2>Record</h2>
 <p><a href="lx03/fig4-record.png"><img src="lx03/fig4-record.png"></img></a></p>
 <ul>
 <li>ブックマーク</li>
 <li>パラメタ設定</li>
-<li>対話ログ, Graphical history (上図) – <span class="citation" data-cites="heer-2008-graphical-histories-for-visualization-supporting-analysis">(Heer et al. 2008)</span></li>
+<li>対話ログ, Graphical history (上図) – <span class="citation" data-cites="heer-2008-graphical-histories-for-visualization-supporting-analysis">[@heer-2008-graphical-histories-for-visualization-supporting-analysis]</span></li>
 <li>注釈</li>
 </ul>
-</section><section id="derive" class="slide level2">
+</section>
+<section id="derive" class="slide level2">
 <h2>Derive</h2>
 <p><a href="lx03/fig5-derive.png"><img src="lx03/fig5-derive.png"></img></a></p>
 <p>既存のデータから新しいデータを派生させること。</p>
@@ -102,10 +113,12 @@
 <ul>
 <li>列：何を探しているのか</li>
 <li>行：どこに探しものがあるのか</li>
-</ul></section><section id="lookup" class="slide level2">
+</ul></section>
+<section id="lookup" class="slide level2">
 <h2>Lookup</h2>
 <p>例：進化の系統樹のなかでヒトを探す。脊椎動物 → 哺乳類 → 霊長類 → ヒト</p>
-</section><section id="locate" class="slide level2">
+</section>
+<section id="locate" class="slide level2">
 <h2>Locate</h2>
 <p>居場所がわからない</p>
 <ul>
@@ -113,13 +126,15 @@
 <li>メガネどこいった？</li>
 <li>犯人はどこに？</li>
 </ul>
-</section><section id="browse" class="slide level2">
+</section>
+<section id="browse" class="slide level2">
 <h2>Browse</h2>
 <ul>
 <li>齧歯目にはどんな生き物がいるんだろう？</li>
 <li>6月15日の株価</li>
 </ul>
-</section><section id="explore" class="slide level2">
+</section>
+<section id="explore" class="slide level2">
 <h2>Explore</h2>
 <p>どこで何を探しているのかわからない状況</p>
 <ul>
@@ -127,38 +142,25 @@
 <li>階級区分図からの<a href="https://en.wikipedia.org/wiki/Choropleth_map">地理的パターンの発見</a></li>
 </ul>
 </section></section>
-<section><section id="query-goals" class="title-slide slide level1"><h1>Query Goals</h1></section><section id="identify" class="slide level2">
+<section><section id="query-goals" class="title-slide slide level1"><h1>Query Goals</h1></section>
+<section id="identify" class="slide level2">
 <h2>Identify</h2>
 <p>lookup goal, locate goal によって見つかったデータの詳細を眺める</p>
-</section><section id="compare" class="slide level2">
+</section>
+<section id="compare" class="slide level2">
 <h2>Compare</h2>
 <p>複数のデータを比較する補助機能。</p>
-<p>例 – <a href="https://smartnova.github.io/tdb-reports/talks/20191203-tdb/">TDB reports</a> – <span class="citation" data-cites="wakita-2019-guiding-the-reader-to-statistical-focus-and-context">(Wakita and Arimoto 2019)</span></p>
-</section><section id="summarize" class="slide level2">
+<p>例 – <a href="https://smartnova.github.io/tdb-reports/talks/20191203-tdb/">TDB reports</a> – <span class="citation" data-cites="wakita-2019-guiding-the-reader-to-statistical-focus-and-context">[@wakita-2019-guiding-the-reader-to-statistical-focus-and-context]</span></p>
+</section>
+<section id="summarize" class="slide level2">
 <h2>Summarize</h2>
 <p>データの概要を簡潔にまとめる機能。</p>
-<p>例 – <a href="https://vis-tools.paluno.uni-due.de/imr/">interactive Map Reports</a> – <span class="citation" data-cites="latif-2019-interactive-map-reports-summarizing-bivariate-geographic">(Latif and Beck 2019)</span></p>
+<p>例 – <a href="https://vis-tools.paluno.uni-due.de/imr/">interactive Map Reports</a> – <span class="citation" data-cites="latif-2019-interactive-map-reports-summarizing-bivariate-geographic">[@latif-2019-interactive-map-reports-summarizing-bivariate-geographic]</span></p>
 <blockquote>
 <p>iMR is a demonstrator of an approach that leverages natural language text to summarize bivariate map visualizations. It uses text templates that can adapt to various datasets. The generated text and visualizations are combined into an interactive document.</p>
 </blockquote>
 </section></section>
-<section id="参考文献" class="title-slide slide level1 unnumbered"><h1>参考文献</h1><div id="refs" class="references" role="doc-bibliography">
-<div id="ref-heer-2008-graphical-histories-for-visualization-supporting-analysis">
-<p>Heer, J., J. Mackinlay, C. Stolte, and M. Agrawala. 2008. “Graphical Histories for Visualization: Supporting Analysis, Communication, and Evaluation.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 14 (6): 1189–96. <a href="https://doi.org/10.1109/TVCG.2008.137">https://doi.org/10.1109/TVCG.2008.137</a>.</p>
-</div>
-<div id="ref-latif-2019-interactive-map-reports-summarizing-bivariate-geographic">
-<p>Latif, S., and F. Beck. 2019. “Interactive Map Reports Summarizing Bivariate Geographic Data.” <em>Visual Informatics</em>. <a href="https://doi.org/10.1016/j.visinf.2019.03.004">https://doi.org/10.1016/j.visinf.2019.03.004</a>.</p>
-</div>
-<div id="ref-viegas-2007-manyeyes-a-site-for-visualization-at-internet-scale">
-<p>Viegas, Fernanda B, Martin Wattenberg, Frank Van Ham, Jesse Kriss, and Matt McKeon. 2007. “Many Eyes: A Site for Visualization at Internet Scale.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 13 (6).</p>
-</div>
-<div id="ref-wakita-2019-guiding-the-reader-to-statistical-focus-and-context">
-<p>Wakita, Ken, and Kohei Arimoto. 2019. “Guiding the Reader to Statistical Focus and Context of Industrial News Reports.”</p>
-</div>
-<div id="ref-wattenberg-2005-baby-names-visualization-and-social-data">
-<p>Wattenberg, Martin. 2005. “Baby Names, Visualization, and Social Data Analysis.” In <em>IEEE Symposium on Information Visualization, 2005. INFOVIS 2005.</em>, 1–7. <a href="https://doi.org/10.1109/INFVIS.2005.1532122">https://doi.org/10.1109/INFVIS.2005.1532122</a>.</p>
-</div>
-</div></section>
+<section id="参考文献" class="title-slide slide level1"><h1>参考文献</h1></section>
     </div>
   </div>
 
@@ -172,7 +174,7 @@
         // Push each slide change to the browser history
         history: true,
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

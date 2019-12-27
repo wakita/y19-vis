@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="utf-8" />
+        <title>5.1 全体像</title>
+        <link rel="stylesheet" href="../../theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../">Visualization Analysis and Design </a></h1>
+                <nav><ul>
+                    <li><a href="/y19-vis/i68wcp/vabook/toc/">目次</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">5.1 全体像</h1>
+    
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>none</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/y19-vis/i68wcp/lib/vabook.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span lang="en">5.5 Channel Effectiveness</span></p>
+<p><span lang="en">To analyze the space of visual encoding possibilities you need to understand the characteristics of these visual channels, because many questions remain unanswered: How are these rankings justified?</span> <span lang="en">Why did the designer decide to use those particular visual channels?</span> <span lang="en">How many more visual channels are there?</span> <span lang="en">What kinds of information and how much information can each channel encode?</span> <span lang="en">Why are some channels better than others?</span> <span lang="en">Can all of the channels be used independently or do they interfere with each other?</span></p>
+<p><span lang="en">This section addresses these questions by introducing the analysis of channels according to the criteria of accuracy, discriminability, separability, the ability to provide visual popout, and the ability to provide perceptual groupings.</span></p>
+<p><span lang="en">5.5.1 Accuracy</span></p>
+<p><span lang="en">The obvious way to quantify effectiveness is accuracy: how close is human perceptual judgement to some objective measurement of the stimulus?</span> <span lang="en">Some answers come to us from psychophysics, the subfield of psychology devoted to the systematic measurement of general human perception.</span> <span lang="en">We perceive different visual channels with different levels of accuracy; they are not all equally distinguishable.</span> <span lang="en">Our responses to the sensory experience of magnitude are characterizable by power laws, where the exponent depends on the exact sensory modality: most stimuli are magnified or compressed, with few remaining unchanged.</span></p>
+<p><span lang="en">Figure 5.7 shows the psychophysical power law of Stevens [Stevens 75].</span> <span lang="en">The apparent magnitude of all sensory channels follows a power function based on the stimulus intensity: brightness results in a perception that is considerably less than twice as bright.</span> <span lang="en">The superlinear phenomena are magnified: doubling the amount of electric current applied to the fingertips results is a sensation that is much more than twice as great.</span> <span lang="en">Figure 5.7 shows that length has an exponent of n = 1.0, so our perception of length is a very close match to the true value.</span> <span lang="en">Here length means the length of a line segment on a 2D plane perpendicular to the observer.</span> <span lang="en">The other visual channels are not perceived as accurately: area and brightness are compressed, while red-gray saturation is magnified.</span></p>
+<p><span lang="en">Another set of answers to the question of accuracy comes from controlled experiments that directly map human response to visually encoded abstract information, giving us explicit rankings of perceptual accuracy for each channel type.</span> <span lang="en">For example, Cleveland and McGill’s experiments on the magnitude channels [Cleveland and McGill 84a] showed that aligned position against a common scale is most accurately perceived, followed by unaligned position against an identical scale, followed by length, followed by angle.</span> <span lang="en">Area judgements are notably less accurate than all of these.</span></p>
+<p><span lang="en">They also propose rankings for channels that they did not directly test: after area is an equivalence class of volume, curvature, and luminance; that class is followed by hue in last place.</span> <span lang="en">(This last place ranking is for hue as a magnitude channel, a very different matter than its second-place rank as a identity channel.)</span> <span lang="en">These accuracy results for visual encodings dovetail nicely with the psychophysical channel measurements in Figure 5.7.</span> <span lang="en">Heer and Bostock confirmed and extended this work using crowdsourcing, summarized in Figure 5.8 [Heer and Bostock 10].</span> <span lang="en">The only discrepancy is that the later work found length and angle judgements roughly equivalent.</span></p>
+<p><span lang="en">The rankings in Figure 5.6 are primarily based on accuracy, which differs according to the type of the attribute that is being encoded, but also take into account the other four considerations.</span></p>
+<p><span lang="en">5.5.2 Discriminability</span></p>
+<p><span lang="en">The question of discriminability is: if you encode data using a particular visual channel, are the differences between items perceptible to the human as intended?</span> <span lang="en">The characterization of visual channel thus should quantify the number of bins that are available for use within a visual channel, where each bin is a distinguishable step or level from the other.</span></p>
+<p><span lang="en">For instance, some channels have a very limited number of bins.</span> <span lang="en">Consider line width: changing the line size only works for a fairly small number of steps.</span> <span lang="en">Increasing the width past that limit will result in a mark that is perceived as a polygon area rather than a line mark.</span> <span lang="en">A small number of bins is not a problem if the number of values to encode is also small.</span> <span lang="en">For example, Figure 5.9 shows an example of effective linewidth use.</span> <span lang="en">Linewidth can work very well to show three or four different values for a data attribute, but it would be a poor choice for dozens or hundreds of values.</span> <span lang="en">The key factor is matching the ranges: the number of different values that need to be shown for the attribute being encoded must not be greater than the number of bins available for the visual channel used to encode it.</span> <span lang="en">If these do not match, then the vis designer should either explicitly aggregate the attribute into meaningful bins or use a different visual channel.</span></p>
+<p><span lang="en">5.5.3 Separability</span></p>
+<p><span lang="en">You cannot treat all visual channels as completely independent from each other, because some have dependencies and interactions with others.</span> <span lang="en">You must consider a continuum of potential interactions between channels for each pair, ranging from the orthogonal and independent separable channels to the inextricably combined integral channels.</span> <span lang="en">Visual encoding is straightforward with separable channels, but attempts to encode different information in integral channels will fail.</span> <span lang="en">People will not be able to access the desired information about each attribute; instead, an unanticipated combination will be perceived.</span></p>
+<p><span lang="en">Clearly, you cannot separately encode two attributes of information using vertical and horizontal spatial position and then expect to encode a third attribute using planar proximity.</span> <span lang="en">In this case it is obvious that the third channel precludes the use of the first two.</span> <span lang="en">However, some of the interchannel interference is less obvious.</span></p>
+<p><span lang="en">Figure 5.10 shows pairs of visual channels at four points along this continuum.</span> <span lang="en">On the left is a pair of channels that are completely separable: position and hue.</span> <span lang="en">We can easily see that the points fall into two categories for spatial position, left and right.</span> <span lang="en">We can also separately attend to their hue and distinguish the red from the blue.</span> <span lang="en">It is easy to see that roughly half the points fall into each of these categories for each of the two channels.</span></p>
+<p><span lang="en">Next is an example of interference between channels, showing that size is not fully separable from color hue.</span> <span lang="en">We can easily distinguish the large half from the small half, but within the small half discriminating between the two colors is much more difficult.</span> <span lang="en">Size interacts with many visual channels, including shape.</span></p>
+<p><span lang="en">Color is discussed in detail in Section 10.2.</span></p>
+<p><span lang="en">The third example shows an integral pair.</span> <span lang="en">Encoding one variable with horizontal size and another with vertical size is ineffective because what we directly perceive is the planar size of the circles, namely, their area.</span> <span lang="en">We cannot easily distinguish groupings of wide from narrow, and short from tall.</span> <span lang="en">Rather, the most obvious perceptual grouping is into three sets: small, medium, and large.</span> <span lang="en">The medium category includes the horizontally flattened as well as the vertically flattened.</span></p>
+<p><span lang="en">The far right on Figure 5.10 shows the most inseparable channel pair, where the red and green channels of the RGB color space are used.</span> <span lang="en">These channels are not perceived separately, but integrated into a combined perception of color.</span> <span lang="en">While we can tell that there are four colors, even with intensive cognitive effort it is very difficult to try to recover the original information about high and low values for each axis.</span> <span lang="en">The RGB color system used to specify information to computers is a very different model than the color processing systems of our perceptual system, so the three channels are not perceptually separable.</span></p>
+<p><span lang="en">Integrality versus separability is not good or bad; the important idea is to match the characteristics of the channels to the information that is encoded.</span> <span lang="en">If the goal is to show the user two different data attributes, either of which can be attended to selectively, then a separable channel pair of position and color hue is a good choice.</span> <span lang="en">If the goal is to show a single data attribute with three categories, then the integral channel pair of horizontal and vertical size is a reasonable choice because it yields the three groups of small, flattened, and large.</span></p>
+<p><span lang="en">Finally, integrality and separability are two endpoints of a continuum, not strictly binary categories.</span> <span lang="en">As with all of the other perceptual issues discussed in this chapter, many open questions remain.</span> <span lang="en">I do not present a definitive list with a categorization for each channel pair, but it’s wise to keep this consideration in mind as you design with channels.</span></p>
+<p><span lang="en">5.5.4 Popout</span></p>
+<p><span lang="en">Many visual channels provide visual popout, where a distinct item stands out from many others immediately.</span> <span lang="en">Figure 5.11 shows two examples of popout: spotting a red object from a sea of blue ones, or spotting one circle from a sea of squares.</span> <span lang="en">The great value of popout is that the time it takes us to spot the different object does not depend on the number of distractor objects.</span> <span lang="en">Our low-level visual system does massively parallel processing on these visual channels, without the need for the viewer to consciously directly attention to items one by one.</span> <span lang="en">The time it takes for the red circle to pop out of the sea of blue ones is roughly equal when there are 15 blue ones as in Figure 5.11(a) or 50 as in Figure 5.11(b).</span></p>
+<p><span lang="en">Popout is not an all-or-nothing phenomenon.</span> <span lang="en">It depends on both the channel itself and how different the target item is from its surroundings.</span> <span lang="en">While the red circle pops out from the seas of 15 and 50 red squares in Figures 5.11(c) and 5.11(d) at roughly the same time, this popout effect is slower than with the color difference versions in Figures 5.11(a) and 5.11(b).</span> <span lang="en">The difference between red and blue on the color hue channel is larger than the difference in shape between filled-in circles and filled-in squares.</span></p>
+<p><span lang="en">Although many different visual channels provide popout on their own, they cannot simply be combined.</span> <span lang="en">A red circle does not pop out automatically from a sea of objects that can be red or blue and circles or squares: the speed of finding the red circle is much faster in Figures 5.11(e) with few distracting objects than in Figure 5.11(f) with many distractors.</span> <span lang="en">The red circle can only be detected with serial search: checking each item, one by one.</span> <span lang="en">The amount of time it takes to find the target depends linearly on the number of distractor objects.</span></p>
+<p><span lang="en">Most pairs of channels do not support popout, but a few pairs do: one example is space and color, and another is motion and shape.</span> <span lang="en">Popout is definitely not possible with three or more channels.</span> <span lang="en">As a general rule, vis designers should only count on using popout for a single channel at a time.</span></p>
+<p><span lang="en">Popout occurs for many channels, not just color hue and shape.</span> <span lang="en">Figures 5.12(a) through 5.12(e) show several examples: tilt, size, shape, proximity, and even shadow direction.</span> <span lang="en">Many other channels support popout, including several different kinds of motion such as flicker, motion direction, and motion velocity.</span></p>
+<p><span lang="en">All of the major channels commonly used in visual encoding that are shown in Figure 5.6 do support popout individually, although not in combination with each other.</span> <span lang="en">However, a small number of potential channels do not support popout.</span> <span lang="en">Figure 5.12(f) shows that parallelism is not preattentively detected; the exactly parallel pair of lines does not pop out from the slightly angled pairs but requires serial search to detect.</span></p>
+<p><span lang="en">5.5.5 Grouping</span></p>
+<p><span lang="en">The effect of perceptual grouping can arises from either the use of link marks, as shown in Figure 5.5, or from the use of identity channels to encode categorical attributes, as shown in Figure 5.6.</span></p>
+<p><span lang="en">Encoding link marks using areas of containment or lines of connection conveys the information that the linked objects form a group with a very strong perceptual cue.</span> <span lang="en">Containment is the strongest cue for grouping, with connection coming in second.</span></p>
+<p><span lang="en">Another way to convey that items form a group is to encode categorical data appropriately with the identity channels.</span> <span lang="en">All of the items that share the same level of the categorical attribute can be perceived as a group by simply directing attention to that level selectively.</span> <span lang="en">The perceptual grouping cue of the identity channels is not as strong as the use of connection or containment marks, but a benefit of this lightweight approach is that it does not add additional clutter in the form of extra link marks.</span> <span lang="en">The third strongest grouping approach is proximity; that is, placing items within the same spatial region.</span> <span lang="en">This perceptual grouping phenomenon is the reason that the top-ranked channel for encoding categorical data is spatial region.</span> <span lang="en">The final grouping channel is similarity with the other categorical channels of hue and motion, and also shape if chosen carefully.</span> <span lang="en">Logically, proximity is like similarity for spatial position; however, from a perceptual point of view the effect of the spatial channels is so much stronger than the effect of the others that it is is useful to consider them separately.</span></p>
+<p><span lang="en">For example, the categorical attribute of animal type with the three levels of cat, dog, and wombat can be encoded with the three hue bins of red, green, and blue respectively.</span> <span lang="en">A user who chooses to attend to the blue hue will automatically see all of the wombats as a perceptual group globally, across the entire scene.</span></p>
+<p><span lang="en">The shape channel needs to be used with care: it is possible to encode categorical data with shape in a way that does not automatically create perceptual groupings.</span> <span lang="en">For example, the shapes of a forward <code>C' and a backward</code>C’ do not automatically form globally selectable groups, whereas the shapes of a circle versus a star do.</span> <span lang="en">Similarly, motion also needs to be used with care.</span> <span lang="en">Although a set of objects moving together against a background of static objects is a very salient cue, multiple levels of motion all happening at once may overwhelm the user’s capacity for selective attention.</span></p>
+</body>
+</html>
+
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://www.cs.ubc.ca/~tmm/vadbook/">Tamara Munzner</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

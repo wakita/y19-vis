@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="utf-8" />
+        <title>5.4 全体像</title>
+        <link rel="stylesheet" href="../../theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../">Visualization Analysis and Design </a></h1>
+                <nav><ul>
+                    <li><a href="/y19-vis/i68wcp/vabook/toc/">目次</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">5.4 全体像</h1>
+    
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>none</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/y19-vis/i68wcp/lib/vabook.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span lang="en">5.4 Using Marks and Channels</span></p>
+<p><span lang="en">All channels are not equal: the same data attribute encoded with two different visual channels will result in different information content in our heads after it has passed through the perceptual and cognitive processing pathways of the human visual system.</span> <span lang="en">The use of marks and channels in vis idiom design should be guided by the principles of expressiveness and effectiveness.</span> <span lang="en">These ideas can be combined to create a ranking of channels according to the type of data that is being visually encoded.</span> <span lang="en">If you have identified the most important attributes as part of developing your task and data abstraction, you can ensure that they are encoded with the highest ranked channels.</span></p>
+<p><span lang="en">5.4.1 Expressiveness and Effectiveness</span></p>
+<p><span lang="en">Two principles guide the use of visual channels in visual encoding: expressiveness and effectiveness.</span> <span lang="en">The expressiveness principle dictates that the visual encoding should express all of, and only, the information in the dataset attributes.</span> <span lang="en">The most fundamental expression of this principle is that ordered data should be shown in a way that our perceptual system intrinsically senses as ordered.</span> <span lang="en">Conversely, unordered data should not be shown in a way that perceptually implies an ordering that does not exist.</span> <span lang="en">Violating this principle is a common beginner’s mistake in vis.</span></p>
+<p><span lang="en">It’s no coincidence that the classification of data attributes in Chapter 2 has a central split along this very same line.</span> <span lang="en">This split of channel types into two major categories is so fundamental to visual encoding design that this distinction is built into the classification at the ground level.</span> <span lang="en">The identity channels are the correct match for the categorical attributes that have no intrinsic order.</span> <span lang="en">The magnitude channels are the correct match for the ordered attributes, both ordinal and quantitative.</span></p>
+<p><span lang="en">The effectiveness principle dictates that the importance of the attribute should match the salience of the channel; that is, its noticeability.</span> <span lang="en">In other words, the most important attributes should be encoded with the most effective channels in order to be most noticeable, and then decreasingly important attributes can be matched with less effective channels.</span></p>
+<p><span lang="en">The rest of this chapter is devoted to the question of what the word effectiveness means in the context of visual encoding.</span></p>
+<p><span lang="en">5.4.2 Channel Rankings</span></p>
+<p><span lang="en">Figure 5.6 presents effectiveness rankings for the visual channels broken down according to the two expressiveness types of ordered and categorical data.</span> <span lang="en">The rankings range from the most effective channels at the top to the least effective at the bottom.</span></p>
+<p><span lang="en">Ordered attributes should be shown with the magnitude channels.</span> <span lang="en">The most effective is aligned spatial position, followed by unaligned spatial position.</span> <span lang="en">Next is length, which is one-dimensional size, and then angle, and then area, which is two-dimensional size.</span> <span lang="en">Position in 3D, namely, depth, is next.</span> <span lang="en">The next two channels are roughly equally effective: luminance and saturation.</span> <span lang="en">The final two channels, curvature and volume (3D size), are also roughly equivalent in terms of accuracy.</span></p>
+<p><span lang="en">Categorical attributes should be shown with the identity channels.</span> <span lang="en">The most effective channel for categorical data is spatial region, with color hue as the next best one.</span> <span lang="en">The motion channel is also effective, particularly for a single set of moving items against a sea of static ones.</span> <span lang="en">The final identity channel appropriate for categorical attributes is shape.</span> <span lang="en">While it is possible in theory to use a magnitude channel for categorical data or a identity channel for ordered data, that choice would be a poor one because the expressiveness principle would be violated.</span></p>
+<p><span lang="en">The two ranked lists of channels in Figure 5.6 both have channels related to spatial position at the top in the most effective spot.</span> <span lang="en">Aligned and unaligned spatial position are at the top of the list for ordered data, and spatial region is at the top of the list for categorical data.</span> <span lang="en">Moreover, the spatial channels are the only ones that appear on both lists; none of the others are effective for both data</span></p>
+<p><span lang="en">Luminance and saturation are aspects of color discussed in Chapter 10.</span></p>
+<p><span lang="en">Hue is an aspect of color discussed in Chapter 10.</span></p>
+<p><span lang="en">Channels: Expressiveness Types and Effectiveness Ranks Magnitude Channels: Ordered Attributes Position on common scale Position on unaligned scale Length (1D size) Tilt/angle Area (2D size) Depth (3D position) Color luminance Color saturation Curvature Volume (3D size) types.</span> <span lang="en">This primacy of spatial position applies only to 2D positions in the plane; 3D depth is a much lower-ranked channel.</span> <span lang="en">These fundamental observations have motivated many of the vis idioms illustrated in this book, and underlie the framework of idiom design choices.</span> <span lang="en">The choice of which attributes to encode with position is the most central choice in visual encoding.</span> <span lang="en">The attributes encoded with position will dominate the user’s mental model–their internal mental representation used for thinking and reasoning–compared with those encoded with any other visual channel.</span></p>
+<p><span lang="en">These rankings are my own synthesis of information drawn from many sources, including several previous frameworks, experimental evidence from a large body of empirical studies, and my own analysis.</span> <span lang="en">The further reading section at the end of this chapter contains pointers to the previous work.</span> <span lang="en">The following sections of this chapter discuss the reasons for these rankings at length.</span></p>
+</body>
+</html>
+
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://www.cs.ubc.ca/~tmm/vadbook/">Tamara Munzner</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -24,10 +24,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>none</title>
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="/y19-vis/i68wcp/lib/vabook.css" />
   <!--[if lt IE 9]>
@@ -58,7 +60,7 @@
 <p>元々のデータセットは航空機の翼に併せた曲面メッシュに沿った時変空間場です。 <span lang="en">The original dataset is a time-varying spatial field with measurements along a curvilinear mesh fitted to an airfoil.</span> <span lang="en">The plot in the physical space pane on the upper right of Figure 3.12 shows the data in this physical space, using the two spatial field variables.</span> <span lang="en">Undisturbed airflow enters the physical space from the left, and the back tip of the airfoil is on the right.</span> <span lang="en">Two important regions in back of the airfoil are distinguished with color: a red recirculation region and a yellow wake region.</span> <span lang="en">While these regions are not easy to distinguish in this physical view, they can be understood and selected more easily by interaction with the four other derived views.</span> <span lang="en">For example, in the derived space of vorticity vs enthalpy in the upper middle of Figure 3.12, the recirculation zone is distinguishable as a coherent spatial structure at the top, with the yellow wake also distinguishable beneath it.</span> <span lang="en">As the white box shows, the recirculation zone can easily be selected in this view.</span> <span lang="en">The pressure vs temperature pane in the bottom middle of Figure 3.12 shows another derived space made by plotting the pressure versus the temperature.</span> <span lang="en">In this view, the red recirculation zone and the yellow wake appear where both the pressure and temperature variables are high, in the upper right.</span> <span lang="en">Without getting into the exact technical meaning of the derived variables as used in fluid dynamics (vorticity, entropy, enthalpy, and so on), the point of this example is that many structures of interest in fluid dynamics can be seen more easily from layouts in the derived spaces.</span></p>
 <p><span lang="en">To summarize this example in terms of a what–why–how analysis, as shown in Figure 3.13, many new quantitative attributes are derived from an original spatial field dataset.</span> <span lang="en">Each pair of them is visually encoded into a view, as is the original spatial data, and the multiple juxtaposed views are coordinated with shared color coding and highlighting.</span></p>
 <h1 id="references">References</h1>
-<div id="refs" role="doc-bibliography">
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-auber-2002-using-strahler-numbers-for-real-time">
 <p>Auber, David. 2002. “Using Strahler numbers for real time visual exploration of huge graphs.” In <em>International Conference on Computer Vision and Graphics</em>, 1-3:56–69. Czech Republic. <a href="https://hal.archives-ouvertes.fr/hal-00307631">https://hal.archives-ouvertes.fr/hal-00307631</a>.</p>
 </div>
