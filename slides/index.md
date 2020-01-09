@@ -15,3 +15,7 @@ date: '2019 4Q'
 - [LX05: MarkとChannel - そして vis の心理的な側面](lx05.pdf)
 
 - [LX06: 表の配置](lx06.pdf)
+
+- [LX07: 木とネットワークの配置](lx07.pdf)
+
+- [LX08: 時間の表現](lx08.pdf)
