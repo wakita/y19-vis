@@ -18,6 +18,8 @@ date: '2019 4Q'
 
 - [LX07: 木とネットワークの配置](lx07.pdf)
 
+---
+
 - [LX08, LX09: 時間の表現](lx08.pdf)
 
 - [LX10: データ項目と属性の還元](lx10.pdf)
@@ -29,3 +31,8 @@ date: '2019 4Q'
     - 扱いきれなかったこと[テキストの可視化](https://textvis.lnu.se)、
 
     - [State of the arts reports (STARs), surveys, and reviews](https://sites.google.com/site/drminchen/cgf-info/cgf-stars)
+
+    - Survey sites:
+        - [Visualization and Visual Analysis of Multifaceted Scientific Data<Paste>](http://multivis.net)
+	- [Dynamic Graph Visualization](http://dynamicgraphs.fbeck.com)
+	- ...
