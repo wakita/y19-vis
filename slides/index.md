@@ -18,4 +18,14 @@ date: '2019 4Q'
 
 - [LX07: 木とネットワークの配置](lx07.pdf)
 
-- [LX08: 時間の表現](lx08.pdf)
+- [LX08, LX09: 時間の表現](lx08.pdf)
+
+- [LX10: データ項目と属性の還元](lx10.pdf)
+
+- [LX11: 複数のビューへの分離](lx11.pdf)
+
+- LX12: 地理的可視化 (labs/lab4) とまとめ
+
+    - 扱いきれなかったこと[テキストの可視化](https://textvis.lnu.se)、
+
+    - [State of the arts reports (STARs), surveys, and reviews](https://sites.google.com/site/drminchen/cgf-info/cgf-stars)
